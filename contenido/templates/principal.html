@@ -1,0 +1,223 @@
+{% extends "main.html" %}
+{% load static %}
+{% block head %}
+    <title>
+        Descargar Juegos gratis para android, pc y peliculas online con Google Drive, Mega | Megafly
+    </title>
+    <meta name="description" content="Descarga juegos gratis para celular android, para pc, para psx, ps2, para ps3 y tambien descarga online Peliculas a la mejora calidad con Google Drive, Mega">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.megafly.ga/">
+    <link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
+    <meta name="referrer" content="origin">
+    <meta name="google" content="translate">
+    <meta name="google" content="sitelinkssearchbox">
+    <link rel="dns-prefetch" href="https://megafly.ga">
+    <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
+{% endblock head %}
+{% block contenido %}
+{% include "superior/descripcion.html"%}
+        <aside class="sidebar-1">
+            <h3>Busqueda Avanzada</h3>
+            <nav class="menu-sidebar-1">
+                <ul>
+                    <li><a href="">Pocos Requisitos&#43;</a></li>
+                    <div class="menu-sidebar-1-cards">
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <li><a href="">Medios Requisitos&#43;</a></li>
+                    <div class="menu-sidebar-1-cards">
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <li><a href="">Altos Requisitos&#43;</a></li>
+                    <div class="menu-sidebar-1-cards">
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                                <h3>Jump Force</h3>
+                            </a>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </aside>
+        <main class="contenido">
+            <h1>Catalogo de Juegos y Peliculas </h1>
+            <div class="contenido-main">
+            {% for pelicula in peliculas%}
+                <div class="card">
+                    <a href="{% url 'pelicula' slug=pelicula.slug_peliculas %}"><img src="{{pelicula.img1.url}}" alt="{{pelicula.nombre_original}}">
+                        <h2>{{pelicula.nombre}}</h2>
+                        <p>{{pelicula.descripcion}}</p>
+                    </a>
+                </div>
+                {%endfor%}
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            </div>
+        </main>
+        <aside class="sidebar-2">
+            <h2>Mas Visitados &#43;</h2>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <h3>Mas Descargadas &#43;</h3>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force"></a>
+                <a href="">
+                    <h3>Jump Force</h3>
+                </a>
+            </div>
+        </aside>
+        <div class="widget-1">
+            <h2>Ultimos VideoJuegos Agregados</h2>
+            <div class="ultimos-agregados">
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="widget-2">
+            <h2>Ultimas Peliculas Agregadas</h2>
+            <div class="ultimos-agregados">
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+{% endblock contenido %}

@@ -1,0 +1,73 @@
+{% extends "main.html" %} {% load static %} {% block head %}
+<title>
+    Ver Peliculas Online gratis completas y descargar Peliculas en la mejor calidad | Megafly
+</title>
+<meta name="description" content="Ver Peliculas Online a la mejora calidad y descargar por nuestros servidores Google Drive, Mega">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Ver Peliculas Online a la mejora calidad y descargar por nuestros servidores Google Drive, Mega">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.megafly.ga/">
+<link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
+<meta name="referrer" content="origin">
+<meta name="google" content="translate">
+<meta name="google" content="sitelinkssearchbox">
+<link rel="dns-prefetch" href="https://megafly.ga">
+<link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
+<link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {% endblock head %} {% block contenido %}
+<main class="contenido">
+    <div class="card">
+        <div class="card_header">
+            <a href=""><img src="{% static 'imagenes/izquierda-megafly.ico' %}"></a>
+        </div>
+        <div class="card_body">
+            <div class="left_body">
+                <img src="{{pelicula.img1.url}}" alt="">
+                <div>
+                    <h5>Comparte:</h5>
+                    <div class="enlaces_body">
+                        <a href=""><img src="{% static 'imagenes/facebook-megafly.ico' %}"></a>
+                        <a href=""><img src="{% static 'imagenes/twitter-megafly.ico' %}"></a>
+                        <a href=""><img src="{% static 'imagenes/instagram-megafly.ico' %}"></a>
+                        <a href=""><img src="{% static 'imagenes/whataspp-megafly.ico' %}"></a>
+                        <a href=""><img src="{% static 'imagenes/copiar-enlace-megafly.ico' %}"></a>
+                    </div>
+                </div>
+                <div class="recomendacion_body">
+                    <p>Peliculas Recomendadas</p>
+                    <div class="card_recomendadas">
+                        <a href=""><img src="{{pelicula.img1.url}}" alt="Jump Force" style="width:100%"></a>
+                        <h2>Jump Force</h2>
+                    </div>
+                    <div class="card_recomendadas">
+                        <a href=""><img src="{{pelicula.img1.url}}" alt="Jump Force" style="width:100%"></a>
+                        <h2>Jump Force</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="right_body">
+                <div class="descripcion">
+                    <h1>{{pelicula.nombre}}</h1>
+                    <p>{{pelicula.descripcion}}</p>
+                    <p><strong>Descargas</strong>: 1045</p>
+                    <p><strong>Calificacion </strong>: 5 estrellas</p>
+                </div>
+                <div class="videos_body">
+                    <h1>Ver Pelicula {{pelicula.nombre}} </h1>
+                    <iframe src="https://drive.google.com/file/d/{{pelicula.online}}/preview"></iframe>
+                </div>
+                <div class="trailer_body">
+                    <h1>Trailer {{pelicula.nombre}}</h1>
+                    <iframe src="https://www.youtube.com/embed/{{pelicula.trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="capturas_body">
+                    <h1>Capturas{{pelicula.nombre}}</h1>
+                    <img src="{{pelicula.img2.url}}" alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock contenido %}

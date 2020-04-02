@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {%block head%}
+    
+    {%endblock head%}  
+</head>
+
+<body>
+    <div class="contenedor"> 
+        {% include "superior/header.html"%}
+        {% block contenido %}  
+
+        {% endblock contenido%}
+       {% include "inferior/footer.html"%}
+
+</body>
+
+</html>
