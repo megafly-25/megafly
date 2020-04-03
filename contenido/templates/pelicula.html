@@ -14,6 +14,7 @@
 <meta name="google" content="translate">
 <meta name="google" content="sitelinkssearchbox">
 <link rel="dns-prefetch" href="https://megafly.ga">
+<link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
 <link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
 <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {% endblock head %} {% block contenido %}
 <main class="contenido">
@@ -23,7 +24,10 @@
         </div>
         <div class="card_body">
             <div class="left_body">
-                <img src="{{pelicula.img1.url}}" alt="">
+                <div class="left_body_responsive">
+                    <h1>{{pelicula.nombre}}</h1>
+                    <img src="{{pelicula.img1.url}}" alt="">
+                </div>
                 <div>
                     <h5>Comparte:</h5>
                     <div class="enlaces_body">
