@@ -177,6 +177,10 @@ body {
     .contenedor .card .card_body .left_body .recomendacion_body {
         display: none;
     }
+    .contenedor .card .card_body .left_body .enlaces_body img {
+        width: 90%;
+        height: 70%;
+    }
     .contenedor .card .card_body .right_body .descripcion h1 {
         display: none;
     }
