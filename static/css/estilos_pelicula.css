@@ -122,12 +122,29 @@ body {
 
 .contenedor .card .card_body .right_body .videos_body,
 .contenedor .card .card_body .right_body .trailer_body,
-.contenedor .card .card_body .right_body .capturas_body {
+.contenedor .card .card_body .right_body .capturas_body,
+.contenedor .card .card_body .right_body .descargar_body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1em 0;
+}
+
+.contenedor .card .card_body .right_body .descargar_body a {
+    background: rgb(31, 164, 99);
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.contenedor .card .card_body .right_body .descargar_body a:hover {
+    background: rgba(31, 164, 99, 0.8);
+    color: #191919;
+    padding: 10px 20px;
+}
+
+.contenedor .card .card_body .right_body .capturas_body img {
+    margin: 0.2em 0;
 }
 
 .contenedor .card .card_body .right_body .descripcion p {
@@ -171,11 +188,15 @@ body {
     .contenedor .card .card_body .left_body img {
         text-align: center;
         width: 80%;
-        height: 150px;
+        height: 100%;
         padding: 10px 0;
     }
     .contenedor .card .card_body .left_body .recomendacion_body {
         display: none;
+    }
+    .contenedor .card .card_body .left_body .enlaces_body img {
+        width: 90%;
+        height: 70%;
     }
     .contenedor .card .card_body .right_body .descripcion h1 {
         display: none;

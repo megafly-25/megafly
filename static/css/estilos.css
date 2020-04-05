@@ -83,27 +83,31 @@
                        .sidebar-1 .menu-sidebar-1 ul .menu-sidebar-1-cards {
                            display: flex;
                            flex-wrap: wrap;
+                           padding: 10px 0;
                        }
                        
                        .sidebar-1 .card {
-                           max-width: 80px;
-                           max-height: 90px;
+                           width: 40%;
+                           height: 90px;
                            margin: 5px;
-                           margin-bottom: 20px;
+                           margin-bottom: 30px;
                            background: #fff;
                        }
                        
                        .sidebar-1 .card a img {
                            transition: all 0.5 ease 0s;
-                           max-width: 80px;
+                           width: 100%;
                            max-height: 100px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
                        }
                        
                        .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a h3 {
-                           font-size: 13px;
-                           color: #2b2b2b;
+                           font-size: 11px;
+                           color: rgba(255, 255, 255, 0.9);
+                           position: relative;
+                           top: -5px;
+                           text-align: center;
                        }
                        /*estilos sidebar 2*/
                        
@@ -157,6 +161,10 @@
                            padding-left: 1em;
                        }
                        
+                       .widget-2 {
+                           margin: 3em 0;
+                       }
+                       
                        .widget-1 h2,
                        .widget-2 h2 {
                            color: #BC2605;
@@ -171,8 +179,8 @@
                        
                        .widget-1 .card,
                        .widget-2 .card {
-                           max-width: 80px;
-                           max-height: 90px;
+                           width: 10%;
+                           max-height: 100px;
                            margin: 5px;
                            background: #fff;
                        }
@@ -180,7 +188,7 @@
                        .widget-1 .card a img,
                        .widget-2 .card a img {
                            transition: all 0.5 ease 0s;
-                           max-width: 80px;
+                           width: 100%;
                            max-height: 100px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
@@ -188,7 +196,8 @@
                        
                        .widget-1 .ultimos-agregados .card a h3,
                        .widget-2 .ultimos-agregados .card a h3 {
-                           font-size: 13px;
+                           font-size: 12px;
+                           text-align: center;
                            color: #2b2b2b;
                        }
                        /*estilos contenido*/
@@ -321,5 +330,8 @@
                            }
                            .header .menu ul li {
                                padding: 5px 0;
+                           }
+                           .sidebar-1 .card {
+                               width: 20%;
                            }
                        }
