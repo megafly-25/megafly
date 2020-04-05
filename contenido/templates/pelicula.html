@@ -54,8 +54,14 @@
                 <div class="descripcion">
                     <h1>{{pelicula.nombre}}</h1>
                     <p>{{pelicula.descripcion}}</p>
-                    <p><strong>Descargas</strong>: 1045</p>
-                    <p><strong>Calificacion </strong>: 5 estrellas</p>
+                    <p><strong>Descargas:</strong> 12</p>
+                    <p><strong>Calificacion:</strong> 5 estrellas</p>
+                    <p><strong>Region:</strong> {{pelicula.region}}</p>
+                    <p><strong>Idiomas:</strong> {{pelicula.idiomas}}</p>
+                    <p><strong>Fecha de Estreno:</strong> {{pelicula.fecha_estreno}}</p>
+                    <p><strong>Peso de Pelicula:</strong> {{pelicula.disco}}</p>
+                    <p><strong>Director:</strong> {{pelicula.director}}</p>
+                    <p><strong>Reparto:</strong> {{pelicula.reparto}}</p>
                 </div>
                 <div class="videos_body">
                     <h1>Ver Pelicula {{pelicula.nombre}} </h1>
@@ -66,9 +72,13 @@
                     <iframe src="https://www.youtube.com/embed/{{pelicula.trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="capturas_body">
-                    <h1>Capturas{{pelicula.nombre}}</h1>
+                    <h1>Capturas {{pelicula.nombre}}</h1>
                     <img src="{{pelicula.img2.url}}" alt="">
-
+                    <img src="{{pelicula.img3.url}}" alt="">
+                    <img src="{{pelicula.img4.url}}" alt="">
+                </div>
+                <div class="descargar_body">
+                <a href="{{pelicula.enlacegd}}">descargar google Drive</a>
                 </div>
             </div>
         </div>
