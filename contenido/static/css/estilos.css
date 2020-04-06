@@ -334,4 +334,23 @@
                            .sidebar-1 .card {
                                width: 20%;
                            }
+                           .sidebar-1 .card a h3 {
+                               font-size: 12px;
+                           }
+                           .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards {
+                               padding: 1em 1em
+                           }
+                           .widget-1 .ultimos-agregados,
+                           .widget-2 .ultimos-agregados {
+                               display: flex;
+                               flex-wrap: wrap;
+                           }
+                           .widget-1 .card,
+                           .widget-2 .card {
+                               width: 20%;
+                               max-height: 90px;
+                               margin: 5px;
+                               background: #fff;
+                               margin-bottom: 15px;
+                           }
                        }
