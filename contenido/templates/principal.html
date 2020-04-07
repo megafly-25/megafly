@@ -17,14 +17,15 @@
     <link rel="dns-prefetch" href="https://megafly.ga">
     <meta property=”og:title” content="Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly">
     <meta property=”og:type” content=website>
-    <meta property="og:url" content="https://www.megafly.ga/">
+    <meta property="og:url" content="https://www.megafly.ga">
     <meta property="og:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="500" />
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
     <meta property="og:site_name" content="megafly juegos y pelicuas" >
     <meta property="og:locale" content="es-PE" >
     <meta property="og:description" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online" >
     <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="fb:app_id" content="115565139993929" />
     <meta name="twitter:card" value="summary_large_image">
     <meta name="twitter:site" content="@megafly juegos y pelicuas">
     <meta name="twitter:url" content="https://www.megafly.ga/">
@@ -35,6 +36,15 @@
     <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
     <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
 {% endblock head %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV21M2FLEL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YV21M2FLEL');
+</script>
 {% block contenido %}
 {% include "superior/descripcion.html"%}
         <aside class="sidebar-1">
@@ -76,7 +86,7 @@
             </nav>
         </aside>
         <main class="contenido">
-            <h1>Catalogo de Juegos y Peliculas gratis online por Megafly </h1>
+            <h1>Catalogo de Juegos y Peliculas gratis online por Megafly en servidores Google drive y Mega</h1>
             <div class="contenido-main">
             {% for pelicula in peliculas%}
                 <div class="card">
@@ -92,14 +102,18 @@
             <h2>Mas Visitados &#43;</h2>
             {% for mas_vi in mas_visitados%}
                         <div class="card">
-                            <a href="{% url 'pelicula' slug=mas_vi.slug_peliculas %}"><img src="{{mas_vi.img1.url}}" alt="{{mas_vi.nombre}}"></a>
+                            <div class="card-img">
+                                <a href="{% url 'pelicula' slug=mas_vi.slug_peliculas %}"><img src="{{mas_vi.img1.url}}" alt="{{mas_vi.nombre}}"></a>
+                            </div>
                             <a href=""><h3>{{mas_vi.nombre}}</h3></a>
                         </div>
             {%endfor%} 
             <h2>Mas Descargadas &#43;</h2>
             {% for mas_des in mas_descargados%}
                         <div class="card">
-                            <a href="{% url 'pelicula' slug=mas_des.slug_peliculas %}"><img src="{{mas_des.img1.url}}" alt="{{mas_des.nombre}}"></a>
+                            <div class="card-img">
+                                <a href="{% url 'pelicula' slug=mas_des.slug_peliculas %}"><img src="{{mas_des.img1.url}}" alt="{{mas_des.nombre}}"></a>
+                            </div>    
                             <a href=""><h3>{{mas_des.nombre}}</h3></a>
                         </div>
             {%endfor%}
@@ -126,5 +140,22 @@
                         </div>
                 {%endfor%} 
             </div>
+        </div>
+        <div class="informacion-megafly">
+            <h1>Sobre nosotros Megafly:</h1>
+                <div class="informacion">
+                    <div class="informacion-1">
+                        <p><strong>Megafly</strong> es una pagina web dedicada a otorgarle servicios de entretenimiento como <strong>descargar juegos de celular android, descargar juegos para PC, PS1, PS2 y PS3</strong> por nuestros servidores <strong>Google Drive y Mega</strong></p>
+                        <p><strong>Megafly</strong> tambien otorga servicios de <strong>Peliculas Online Gratis a la mejor calidad y sin publicidad</strong>, tambien puedes <strong>descargar las peliculas en los servidores Google Drive y Mega</strong></p>
+                        <p><strong>No olvide que nosotros a estamos para servirle,</strong> contactenos para reportar enlaces de las peliculas que tienen problemas o para recomendar una pelicula, <strong>Megafly siempre contigo.</strong></p>
+                    </div>
+                    <div class="informacion-2">
+                        <p><strong>Apoyanos con una Donacion para Seguir Trabajando:</strong></p>
+                        <a href="https://paypal.me/megaflypelis?locale.x=es_XC" target="_blank">
+                        <img src="{% static 'imagenes/paypal-megafly.png'%}" alt="pay pal megafly">
+                        </a>
+                         <a href="https://paypal.me/megaflypelis?locale.x=es_XC" class="cta" target="_blank"><button>Donar</button></a>
+                    </div>
+                </div>
         </div>
 {% endblock contenido %}

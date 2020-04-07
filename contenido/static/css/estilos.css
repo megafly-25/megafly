@@ -4,8 +4,8 @@
                            display: grid;
                            grid-gap: 1em;
                            grid-template-columns: repeat(5, 1fr);
-                           grid-template-rows: repeat(6, auto);
-                           grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" " sidebar-1 contenido contenido contenido sidebar-2" "sidebar-1 widget-1 widget-1 widget-1 sidebar-2" "sidebar-1 widget-2 widget-2 widget-2 sidebar-2" "footer footer footer footer footer";
+                           grid-template-rows: repeat(7, auto);
+                           grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 contenido contenido contenido sidebar-2" "sidebar-1 widget-1 widget-1 widget-1 sidebar-2" "sidebar-1 widget-2 widget-2 widget-2 sidebar-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                        }
                        
                        .contenedor .header {
@@ -38,6 +38,10 @@
                        
                        .contenedor .footer {
                            grid-area: footer;
+                       }
+                       
+                       .contenedor .informacion-megafly {
+                           grid-area: informacion-megafly;
                        }
                        /*estilos descripcion*/
                        
@@ -72,39 +76,39 @@
                        }
                        
                        .sidebar-1 h3 {
-                           color: #BC2605;
+                           color: palevioletred;
                        }
                        
                        .sidebar-1 .menu-sidebar-1 li a {
                            color: #2460e8;
-                           border-bottom: #BC2605 solid 2px;
+                           border-bottom: palevioletred solid 2px;
                        }
                        
                        .sidebar-1 .menu-sidebar-1 ul .menu-sidebar-1-cards {
                            display: flex;
                            flex-wrap: wrap;
-                           padding: 10px 0;
+                           padding-bottom: 2em;
                        }
                        
-                       .sidebar-1 .card {
-                           width: 40%;
-                           height: 90px;
-                           margin: 5px;
-                           margin-bottom: 30px;
+                       .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card {
+                           width: 35%;
+                           max-height: 100px;
+                           margin: 15px;
                            background: #fff;
+                           z-index: 1;
                        }
                        
                        .sidebar-1 .card a img {
                            transition: all 0.5 ease 0s;
                            width: 100%;
-                           max-height: 100px;
+                           height: 100%;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
                        }
                        
                        .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a h3 {
-                           font-size: 11px;
-                           color: rgba(255, 255, 255, 0.9);
+                           font-size: 13px;
+                           color: #2b2b2b;
                            position: relative;
                            top: -5px;
                            text-align: center;
@@ -120,35 +124,40 @@
                        }
                        
                        .sidebar-2 h2 {
-                           color: #BC2605;
+                           color: palevioletred;
                        }
                        
                        .sidebar-2 .card {
                            display: flex;
                            flex-direction: row;
-                           max-width: 200px;
-                           max-height: 100px;
-                           margin: 3px;
-                           margin-bottom: 10px;
+                           width: 200px;
+                           height: 100px;
+                           margin: 10px 0;
                            border-radius: 5px;
                            padding: 5px 10px;
                            background: #f7f7f7;
                        }
                        
-                       .sidebar-2 .card a img {
+                       .sidebar-2 .card .card-img {
+                           width: 70px;
+                           height: 90px;
+                           background: rgba(0, 0, 0, 0.5);
+                       }
+                       
+                       .sidebar-2 .card .card-img a img {
                            transition: all 0.5 ease 0s;
-                           max-width: 80px;
-                           max-height: 70px;
+                           width: 70px;
+                           height: 90px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
                        }
                        
                        .sidebar-2 .card h3 {
-                           padding: 10px;
+                           padding: 10px 5px;
                        }
                        
                        .sidebar-2 .card a h3 {
-                           font-size: 16px;
+                           font-size: 14px;
                            color: #2b2b2b;
                        }
                        /*widget-1*/
@@ -162,26 +171,26 @@
                        }
                        
                        .widget-2 {
-                           margin: 3em 0;
+                           margin: 1em 0;
                        }
                        
                        .widget-1 h2,
                        .widget-2 h2 {
-                           color: #BC2605;
+                           color: palevioletred;
                        }
                        
                        .widget-1 .ultimos-agregados,
                        .widget-2 .ultimos-agregados {
                            display: flex;
                            flex-wrap: wrap;
-                           padding-top: 10px;
+                           padding: 1em 0;
                        }
                        
-                       .widget-1 .card,
-                       .widget-2 .card {
-                           width: 10%;
-                           max-height: 100px;
-                           margin: 5px;
+                       .widget-1 .ultimos-agregados .card,
+                       .widget-2 .ultimos-agregados .card {
+                           width: 15%;
+                           max-height: 150px;
+                           margin: 15px;
                            background: #fff;
                        }
                        
@@ -189,7 +198,7 @@
                        .widget-2 .card a img {
                            transition: all 0.5 ease 0s;
                            width: 100%;
-                           max-height: 100px;
+                           max-height: 150px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
                        }
@@ -203,7 +212,7 @@
                        /*estilos contenido*/
                        
                        .contenedor .contenido h1 {
-                           color: #BC2605;
+                           color: palevioletred;
                        }
                        
                        .contenedor .contenido .contenido-main {
@@ -261,6 +270,46 @@
                            display: flex;
                        }
                        
+                       .informacion-megafly {
+                           background: #f1f1f1;
+                           padding: 2em 1em;
+                           font-family: Montserrat;
+                       }
+                       
+                       .informacion-megafly h1 {
+                           color: palevioletred;
+                       }
+                       
+                       .informacion-megafly .informacion {
+                           display: flex;
+                           flex-direction: row;
+                           padding: 2em 1em;
+                           justify-content: space-around;
+                       }
+                       
+                       .informacion-megafly .informacion .informacion-1 {
+                           border: paleturquoise 2px solid;
+                           padding: 1.5em;
+                       }
+                       
+                       .informacion-megafly .informacion .informacion-1 p {
+                           text-align: justify;
+                           padding: 1em 0;
+                       }
+                       
+                       .informacion-megafly .informacion .informacion-2 {
+                           border: paleturquoise 2px solid;
+                           padding: 1.5em;
+                       }
+                       
+                       .informacion-megafly .informacion .informacion-2 a img {
+                           max-width: 400px;
+                       }
+                       
+                       .informacion-megafly .informacion .informacion-2 a button {
+                           justify-content: center;
+                       }
+                       
                        @media screen and (max-width:1300px) {
                            .contenido-main .card {
                                max-width: 160px;
@@ -309,8 +358,8 @@
                        
                        @media screen and (max-width:750px) {
                            .contenedor {
-                               grid-template-rows: repeat(8, auto);
-                               grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina""contenido contenido contenido contenido contenido" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "footer footer footer footer footer";
+                               grid-template-rows: repeat(9, auto);
+                               grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina""contenido contenido contenido contenido contenido" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                            }
                            .contenido-main .card {
                                /*max-width: 70px;
@@ -331,14 +380,16 @@
                            .header .menu ul li {
                                padding: 5px 0;
                            }
-                           .sidebar-1 .card {
-                               width: 20%;
+                           .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card {
+                               width: 25%;
+                               max-height: 150px;
+                               margin: 1em 0.3em;
                            }
-                           .sidebar-1 .card a h3 {
-                               font-size: 12px;
+                           .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a h3 {
+                               font-size: 14px;
                            }
                            .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards {
-                               padding: 1em 1em
+                               margin-bottom: 2em;
                            }
                            .widget-1 .ultimos-agregados,
                            .widget-2 .ultimos-agregados {
@@ -352,5 +403,15 @@
                                margin: 5px;
                                background: #fff;
                                margin-bottom: 15px;
+                           }
+                           .informacion-megafly .informacion {
+                               flex-direction: column;
+                           }
+                           .informacion-megafly .informacion .informacion-2 img {
+                               width: 100%;
+                           }
+                           .informacion-megafly .informacion .informacion-1,
+                           .informacion-megafly .informacion .informacion-2 {
+                               width: 100%;
                            }
                        }

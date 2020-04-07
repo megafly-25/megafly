@@ -3,9 +3,9 @@ from .models import peliculas
 # Create your views here.
 def principal(request):
     pelicula=peliculas.objects.get_queryset().order_by('id')
-    pocos_requisitos=peliculas.objects.all()[:8]
-    medios_requisitos=peliculas.objects.all()[8:16]
-    altos_requisitos=peliculas.objects.all()[16:23]
+    pocos_requisitos=peliculas.objects.all()[8:16]
+    medios_requisitos=peliculas.objects.all()[16:24]
+    altos_requisitos=peliculas.objects.all()[24:31]
     mas_visitados=peliculas.objects.all()[15:23]
     mas_descargados=peliculas.objects.all()[:8]
     last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
