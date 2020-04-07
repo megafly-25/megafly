@@ -1,6 +1,14 @@
 from django.shortcuts import render,get_object_or_404
 from .models import peliculas
+from django.views.defaults import page_not_found
 # Create your views here.
+def mi_error_404(request,exception):
+    return page_not_found(request,exception,template_name="404.html")
+def robots(request):
+    return render(request,"robots.txt", content_type="text/plain")
+    
+def sitemap(request):
+    return render(request,"sitemap.xml",content_type="application/xhtml+xml")  
 def principal(request):
     pelicula=peliculas.objects.get_queryset().order_by('id')
     pocos_requisitos=peliculas.objects.all()[8:16]
