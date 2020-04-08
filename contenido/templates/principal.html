@@ -15,16 +15,7 @@
   }
 </script>
 {%endblock schema%}
-{% block googleanalytics%}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV21M2FLEL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YV21M2FLEL');
-</script>
-{% endblock googleanalytics%}
 {% block facebook_pixel %}
 <!-- Facebook Pixel Code -->
 <script>
@@ -45,6 +36,17 @@
 <!-- End Facebook Pixel Code -->
 {% endblock facebook_pixel %}
 {% block head %}
+{% block googleanalytics%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-29T9BJNN95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-29T9BJNN95');
+</script>
+{% endblock googleanalytics%}
     <script data-ad-client="ca-pub-7691100873282163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta name="google-site-verification" content="7QuQk1wx7T0Pn89sYmD0AzzNi2x-Aa53RCTHFeAxGvQ" />
     <title>Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly</title>
