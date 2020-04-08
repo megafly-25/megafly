@@ -15,6 +15,16 @@
   }
 </script>
 {%endblock schema%}
+{% block googleanalytics%}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV21M2FLEL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YV21M2FLEL');
+</script>
+{% endblock googleanalytics%}
 {% block head %}
     <meta name="google-site-verification" content="7QuQk1wx7T0Pn89sYmD0AzzNi2x-Aa53RCTHFeAxGvQ" />
     <title>Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly</title>
@@ -34,8 +44,6 @@
     <meta property=”og:type” content="website">
     <meta property="og:url" content="https://www.megafly.ga">
     <meta property="og:image" content="{% static 'imagenes/facebook-megafly-og.png' %}">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="600">
     <meta property="og:site_name" content="megafly juegos y pelicuas" >
     <meta property="og:locale" content="es-PE" >
     <meta property="og:description" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online" >
@@ -52,14 +60,6 @@
     <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
 {% endblock head %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV21M2FLEL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YV21M2FLEL');
-</script>
 {% block contenido %}
 {% include "superior/descripcion.html"%}
         <aside class="sidebar-1">
