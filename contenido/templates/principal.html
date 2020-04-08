@@ -25,6 +25,25 @@
   gtag('config', 'G-YV21M2FLEL');
 </script>
 {% endblock googleanalytics%}
+{% block facebook_pixel %}
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '552731338706557');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=552731338706557&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+{% endblock facebook_pixel %}
 {% block head %}
     <meta name="google-site-verification" content="7QuQk1wx7T0Pn89sYmD0AzzNi2x-Aa53RCTHFeAxGvQ" />
     <title>Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly</title>
@@ -40,21 +59,22 @@
     <meta name="google" content="translate">
     <meta name="google" content="sitelinkssearchbox">
     <link rel="dns-prefetch" href="https://megafly.ga">
+    <meta property="fb:app_id" content="115565139993929">
     <meta property=”og:title” content="Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly">
     <meta property=”og:type” content="website">
     <meta property="og:url" content="https://www.megafly.ga">
     <meta property="og:image" content="{% static 'imagenes/facebook-megafly-og.png' %}">
     <meta property="og:site_name" content="megafly juegos y pelicuas" >
     <meta property="og:locale" content="es-PE" >
-    <meta property="og:description" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online" >
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="fb:app_id" content="115565139993929" />
+    <meta property="og:description" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online">
+    <meta property="og:locale:alternate" content="es_ES">
     <meta name="twitter:card" value="summary_large_image">
+    <meta name="twitter:title" content="Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly">
     <meta name="twitter:site" content="@megafly juegos y pelicuas">
     <meta name="twitter:url" content="https://www.megafly.ga/">
-    <meta name="twitter:title" content="Descarga Juegos y peliculas gratis online con GoogleDrive,Mega-Megafly">
     <meta name="twitter:description" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online">
     <meta name="twitter:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
+    <meta name="twitter:image:alt" content="megafly ofrecemos una variedad de peliculas online gratis, para descargar por nuestros servidores google drive y mega">
     <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
     <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
     <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
