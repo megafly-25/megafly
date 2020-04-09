@@ -1,5 +1,3 @@
-                       /*estilos Contenido*/
-                       
                        .contenedor {
                            display: grid;
                            grid-gap: 1em;
@@ -7,6 +5,7 @@
                            grid-template-rows: repeat(7, auto);
                            grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 contenido contenido contenido sidebar-2" "sidebar-1 widget-1 widget-1 widget-1 sidebar-2" "sidebar-1 widget-2 widget-2 widget-2 sidebar-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                        }
+                       /*estilos Contenido*/
                        
                        .contenedor .header {
                            grid-area: header;
