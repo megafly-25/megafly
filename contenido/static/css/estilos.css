@@ -222,51 +222,80 @@
                        
                        .contenido .contenido-main .card {
                            max-width: 185px;
-                           max-height: 210px;
+                           max-height: 230px;
                            text-align: center;
                            margin: 3px;
                            border-radius: 5px;
                            padding: 0;
+                           transition: all 0.5 ease 0s;
+                           margin-bottom: 2em;
                        }
                        
                        .contenido .contenido-main .card a>h2 {
-                           position: relative;
+                           /*position: relative;*/
                            font-size: 14px;
-                           z-index: 1;
-                           top: -38px;
-                           color: rgba(255, 255, 255, 0.9);
+                           /*z-index: 1;
+                           top: -38px;*/
+                           color: #191919;
                        }
                        
-                       .contenido .contenido-main .card a>p {
+                       .contenido .contenido-main .card a>.resumen {
                            display: none;
                            position: relative;
                            z-index: 1;
                            text-align: justify;
-                           font-size: 14px;
                            padding: 5px;
-                           top: -220px;
-                           left: 180px;
-                           width: 180px;
+                           top: -280px;
+                           left: 160px;
+                           width: 200px;
                            border-radius: 5px;
                            background: #fff;
+                           padding: 5px 10px;
+                           color: #191919;
                            transition: all 0.3s ease 0s;
+                       }
+                       
+                       .contenido .contenido-main .card a>.resumen p {
+                           font-size: 13px;
+                       }
+                       
+                       .contenido .contenido-main .card a>.resumen h3 {
+                           font-size: 13px;
+                           color: rgb(19, 50, 82);
+                           text-align: center;
+                           padding-bottom: 3px;
+                       }
+                       
+                       .contenido .contenido-main .card a>.resumen h6 {
+                           font-size: 12px;
                        }
                        
                        .contenedor .contenido .contenido-main .card img {
                            width: 100%;
-                           height: 200px;
+                           height: 100%;
                            transition: all 0.5 ease 0s;
                            border-radius: 5px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
+                           -webkit-transition: all .9s ease;
+                           /* Safari y Chrome */
+                           -moz-transition: all .9s ease;
+                           /* Firefox */
+                           -o-transition: all .9s ease;
+                           /* IE 9 */
+                           -ms-transition: all .9s ease;
                        }
                        
                        .contenido-main .card img:hover,
                        .contenido-main .card a:hover {
-                           opacity: 0.8;
+                           -webkit-transform: scale(2.25);
+                           -moz-transform: scale(1.25);
+                           -ms-transform: scale(1.25);
+                           -o-transform: scale(1.25);
+                           transform: scale(1.25);
                        }
                        
-                       .contenido-main .card a:hover>p {
-                           display: flex;
+                       .contenido-main .card a:hover>.resumen {
+                           display: block;
                        }
                        
                        .informacion-megafly {
@@ -309,7 +338,7 @@
                            justify-content: center;
                        }
                        
-                       @media screen and (min-width:1300px) {
+                       @media screen and (min-width:1300px) and (min-height:1900) {
                            .contenedor {
                                display: grid;
                                grid-gap: 1em;
@@ -370,18 +399,25 @@
                                grid-template-rows: repeat(9, auto);
                                grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina""contenido contenido contenido contenido contenido" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                            }
-                           .contenido-main .card {
+                           .contenido .contenido-main .card {
                                /*max-width: 70px;
                                max-height: 110px;*/
                                width: 30%;
-                               height: 100%;
                                text-align: center;
                                margin: 3px;
                                border-radius: 5px;
                                padding: 0;
+                               margin-bottom: 3em;
                            }
-                           .contenido-main .card h2 {
-                               font-size: 10px;
+                           .contenido .contenido-main .card a img {
+                               width: 100%;
+                               height: 100%;
+                           }
+                           .contenido .contenido-main .card a h2 {
+                               font-size: 13px;
+                           }
+                           .contenido .contenido-main .card a>.resumen {
+                               display: none;
                            }
                            .header .menu ul {
                                flex-direction: column;
@@ -394,6 +430,10 @@
                                max-height: 150px;
                                margin: 1em 0.3em;
                            }
+                           .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a img {
+                               width: 100%;
+                               height: 100%;
+                           }
                            .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a h3 {
                                font-size: 14px;
                            }
@@ -405,13 +445,21 @@
                                display: flex;
                                flex-wrap: wrap;
                            }
-                           .widget-1 .card,
-                           .widget-2 .card {
+                           .widget-1 .ultimos-agregados .card,
+                           .widget-2 .ultimos-agregados .card {
                                width: 20%;
-                               max-height: 90px;
+                               height: 100px;
                                margin: 5px;
                                background: #fff;
-                               margin-bottom: 15px;
+                               margin-bottom: 30px;
+                           }
+                           .widget-1 .ultimos-agregados .card img,
+                           .widget-2 .ultimos-agregados .card img {
+                               height: 100%;
+                           }
+                           .widget-1 .ultimos-agregados .card a h3,
+                           .widget-2 .ultimos-agregados .card a h3 {
+                               font-size: 13px;
                            }
                            .informacion-megafly .informacion {
                                flex-direction: column;

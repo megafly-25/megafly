@@ -130,7 +130,12 @@
                 <div class="card">
                     <a href="{% url 'pelicula' slug=pelicula.slug_peliculas %}"><img src="{{pelicula.img1.url}}" alt="{{pelicula.nombre_original}}">
                         <h2>{{pelicula.nombre}}</h2>
-                        <p>{{pelicula.descripcion}}</p>
+                        <div class="resumen">
+                            <h3>{{pelicula.nombre}}</h3>
+                            <p>{{pelicula.descripcion}}</p>
+                            <h6>Calificacion: {{pelicula.calificacion}}</h6>
+                            <h6>Descargas: {{pelicula.descargas}}</h6>
+                        </div>
                     </a>
                 </div>
                 {%endfor%}
