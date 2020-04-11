@@ -35,6 +35,17 @@
 <!-- End Facebook Pixel Code -->
 {% endblock facebook_pixel %}
 {% block head %}
+{% block googleanalytics%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163130682-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163130682-1');
+</script>
+{% endblock googleanalytics%}
 <title>
     Ver {{pelicula.nombre}} Online gratis completo en googledrive
 </title>

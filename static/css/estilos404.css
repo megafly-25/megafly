@@ -1,0 +1,42 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "header" "contenido404" "footer";
+}
+
+.contenedor .header {
+    grid-area: header;
+}
+
+.contenedor .footer {
+    grid-area: footer;
+}
+
+.contenedor .contenido404 {
+    grid-area: contenido404;
+    margin: 0 auto;
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+}
+
+.contenedor .contenido404 img {
+    max-width: 1000px;
+    max-height: 600px;
+}
+
+.contenedor .contenido404 h1 {
+    text-align: center;
+    background: #FA8072;
+    padding: 10px 20px;
+    color: #191919;
+    font-family: Monserrat;
+    font-size: 20px;
+}
+
+@media screen and (max-width:750px) {
+    .contenedor .contenido404 img {
+        width: 100%;
+    }
+}

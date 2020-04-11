@@ -1,38 +1,5 @@
 {% extends "main.html" %}
-{%block schema%}
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": "ver peliculas online gratis",
-    "author": "Megafly",
-    "url": "https://www.megafly.ga/peliculas/{{pelicula.slug_peliculas}}",
-    "address": "Peru",
-    "sameAs": [
-      "https://www.facebook.com/groups/154149275933711/"
-    ]
-  }
-</script>
-{%endblock schema%}
-{% block facebook_pixel %}
-<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '552731338706557');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=552731338706557&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-{% endblock facebook_pixel %}
+{% load static%}
 {% block head %}
 {% block googleanalytics%}
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -77,11 +44,15 @@
 <meta name="twitter:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
 <meta name="twitter:image:alt" content="megafly ofrecemos una variedad de peliculas online gratis, para descargar por nuestros servidores google drive y mega">
 <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
-<link href="{% static 'css/estilos.css'%}" rel="stylesheet">
+<link href="{% static 'css/estilos404.css'%}" rel="stylesheet">
 <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {% endblock head %}
  {% block contenido %}
-    <img class="img404" src="{% static 'imagenes/404megafly.png' %}">
-    <a href="{% url 'principal'%}">Regresar a ver las mejores peliculas</a>  
+    <div class="contenido404">
+      <a href="{% url 'principal'%}">
+      <img src="{% static 'imagenes/404megafly.png' %}" alt="Pagina 404 Megafly">
+      <h1 >Regresar a ver las mejores peliculas</h1>
+      </a> 
+    </div>
 {% endblock contenido %}
 
 
