@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
-
+from django.urls import reverse
 # Create your models here.
 idioma=(
     ("Español Latino","Español Latino"),
@@ -216,7 +216,9 @@ class  peliculas(models.Model):
     enlacemg5=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega 5")
     comparte=models.CharField(max_length=250,blank=True,null=True)
     def __str__(self):
-            return self.nombre
+        return self.nombre
+    def get_absolute_url(self):
+        return reverse('pelicula', kwargs={'slug': self.slug_peliculas})
 def slug_generator_peliculas(sender,instance,*args,**kwargs):
     if instance.slug_peliculas:
         return
