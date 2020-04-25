@@ -4,7 +4,7 @@ from django.views.defaults import page_not_found
 from random import randint
 # Create your views here.
 categoria=categorias.objects.get_queryset().order_by('nombre')
-anio_film=peliculas.objects.values_list('anio',flat=True).distinct()
+anio_film=peliculas.objects.values_list('anio',flat=True).distinct().order_by('-anio')
 pocos_requisitos=peliculas.objects.all()[8:16]
 medios_requisitos=peliculas.objects.all()[16:24]
 altos_requisitos=peliculas.objects.all()[24:31]
