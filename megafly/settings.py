@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'megaflydb',
         'USER': 'megafly',
         'PASSWORD':'Jorgeluis',
-        'HOST':'127.0.0.1',
+        'HOST':'localhost',
         'DATABASE_POST':'5432',
     }
 }

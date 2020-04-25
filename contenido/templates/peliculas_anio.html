@@ -5,7 +5,7 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": "ver peliculas online gratis",
+    "name": "ver peliculas online gratis por año",
     "author": "Megafly",
     "url": "https://www.megaflypeliculas.ga",
     "address": "Peru",
@@ -47,39 +47,40 @@
   gtag('config', 'UA-163130682-1');
 </script>
 {% endblock googleanalytics%}
-    <title>Peliculas y Juegos gratis online en Google Drive, Mega | Megafly</title>
-    <meta name="description" content="Descarga juegos y peliculas online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    {%for pe in peliculas%}<title>Peliculas gratis del {{pe.anio}} online en Google Drive, Mega | Megafly</title>
+    <meta name="description" content="Descargar peliculas online gratis del año {{pe.anio}} para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-    <meta name="keywords" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online">
+    <meta name="keywords" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online, ver peliculas del {{pe.anio}}, ver peliculas online del año {{pe.anio}}">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://www.megaflypeliculas.ga/">
+    <link rel="canonical" href="https://www.megaflypeliculas.ga/peliculas/del/{{pe.anio}}">
     <link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
     <meta name="referrer" content="origin">
     <meta name="google" content="translate">
     <meta name="google" content="sitelinkssearchbox">
-    <link rel="dns-prefetch" href="https://megaflypeliculas.ga">
+    <link rel="dns-prefetch" href="https://megaflypeliculas.ga/peliculas/del/{{pe.anio}}">
     <meta property="fb:app_id" content="154149275933711">
-    <meta property=”og:title” content="Peliculas y Juegos gratis online en GoogleDrive, Mega | Megafly">
+    <meta property=”og:title” content="Peliculas del año {{pe.anio}} gratis online en GoogleDrive, Mega | Megafly">
     <meta property=”og:type” content="website">
-    <meta property="og:url" content="https://www.megaflypeliculas.ga">
+    <meta property="og:url" content="https://www.megaflypeliculas.ga/peliculas/del/{{pe.anio}}">
     <meta property="og:image" content="{% static 'imagenes/facebook-megafly-og.png' %}">
     <meta property="og:site_name" content="megaflypeliculas" >
     <meta property="og:locale" content="es-PE" >
-    <meta property="og:description" content="Descarga juegos y peliculas online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    <meta property="og:description" content="Descargar peliculas online gratis del año {{pe.anio}} para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
     <meta property="og:locale:alternate" content="es_ES">
     <meta name="twitter:card" value="summary_large_image">
     <meta name="twitter:site" content="@megafly">
     <meta name="twitter:creator" content="@Megafly">
-    <meta name="twitter:title" content="Peliculas y Juegos gratis online en GoogleDrive, Mega | Megafly">
-    <meta name="twitter:description" content="Descarga juegos y peliculas online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
-    <meta name="twitter:url" content="https://www.megaflypeliculas.ga/">
+    <meta name="twitter:title" content="Peliculas del año {{pe.anio}} gratis online en GoogleDrive, Mega | Megafly">
+    <meta name="twitter:description" content="Descargar peliculas online gratis del año {{pe.anio}} para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    <meta name="twitter:url" content="https://www.megaflypeliculas.ga/peliculas/del/{{pe.anio}}">
     <meta name="twitter:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
     <meta name="twitter:image:alt" content="megafly ofrecemos una variedad de peliculas online gratis, para descargar por nuestros servidores google drive y mega">
     <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
     <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
     <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
+    {%endfor%}
 {% endblock head %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {% block contenido %}

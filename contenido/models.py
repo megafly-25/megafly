@@ -193,6 +193,7 @@ class  peliculas(models.Model):
     idiomas=models.CharField(max_length=150,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
     fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    anio=models.CharField(max_length=4,blank=True,null=True,editable=False)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
     director=models.CharField(max_length=100,verbose_name="Director")
@@ -203,18 +204,19 @@ class  peliculas(models.Model):
     img3=models.ImageField(verbose_name="Subir Imagen 3",blank=True,null=True)
     img4=models.ImageField(verbose_name="Subir Imagen 4",blank=True,null=True)
     img5=models.ImageField(verbose_name="Subir Imagen 5",blank=True,null=True)
-    enlacegd=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Google Drive")
-    enlacegd2=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Google Drive 2")
-    enlacegd3=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Google Drive 3")
-    enlacegd4=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Google Drive 4")
-    enlacegd5=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Google Drive 5")
-    enlacesub=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Subtitulo")
-    enlacemg=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega ")
-    enlacemg2=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega 2")
-    enlacemg3=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega 3")
-    enlacemg4=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega 4")
-    enlacemg5=models.CharField(max_length=250,blank=True,null=True,verbose_name="Enlace Mega 5")
-    comparte=models.CharField(max_length=250,blank=True,null=True)
+    enlacegd=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive")
+    enlacegd2=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive 2")
+    enlacegd3=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive 3")
+    enlacegd4=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive 4")
+    enlacegd5=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive 5")
+    enlacesub=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Subtitulo")
+    enlacemg=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega ")
+    enlacemg2=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega 2")
+    enlacemg3=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega 3")
+    enlacemg4=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega 4")
+    enlacemg5=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega 5")
+    comparte=models.CharField(max_length=500,blank=True,null=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
     def __str__(self):
         return self.nombre
     def get_absolute_url(self):
@@ -224,3 +226,9 @@ def slug_generator_peliculas(sender,instance,*args,**kwargs):
         return
     instance.slug_peliculas=slugify(instance.nombre)
 pre_save.connect(slug_generator_peliculas,sender=peliculas)
+
+def only_year(sender,instance,*args,**kwargs):
+    if instance.anio:
+        return
+    instance.anio=instance.fecha_estreno.year
+pre_save.connect(only_year,sender=peliculas)

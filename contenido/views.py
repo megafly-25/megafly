@@ -1,20 +1,23 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import peliculas,categorias
 from django.views.defaults import page_not_found
 from random import randint
 # Create your views here.
+categoria=categorias.objects.get_queryset().order_by('nombre')
+anio_film=peliculas.objects.values_list('anio',flat=True).distinct()
+pocos_requisitos=peliculas.objects.all()[8:16]
+medios_requisitos=peliculas.objects.all()[16:24]
+altos_requisitos=peliculas.objects.all()[24:31]
+mas_visitados=peliculas.objects.all()[15:23]
+mas_descargados=peliculas.objects.all()[:8]
+last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+
 def mi_error_404(request,exception):
     return page_not_found(request,exception,template_name="404.html")
 def robots(request):
     return render(request,"robots.txt", content_type="text/plain")
 def principal(request):
     pelicula=peliculas.objects.get_queryset().order_by('id')
-    pocos_requisitos=peliculas.objects.all()[8:16]
-    medios_requisitos=peliculas.objects.all()[16:24]
-    altos_requisitos=peliculas.objects.all()[24:31]
-    mas_visitados=peliculas.objects.all()[15:23]
-    mas_descargados=peliculas.objects.all()[:8]
-    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
     data={
         'peliculas':pelicula,
         'pocos_requisitos':pocos_requisitos,
@@ -23,6 +26,8 @@ def principal(request):
         'mas_visitados':mas_visitados,
         'mas_descargados':mas_descargados,
         'last_film_add':last_film_add,
+        'categoria':categoria,
+        'anio_film':anio_film,
         
     }
     return render(request,"principal.html",data)
@@ -56,3 +61,39 @@ def pelicula(request,slug):
       
     }
     return render(request,"pelicula.html",data)
+def pelicula_genero(request,slug):
+    pelicula=peliculas.objects.filter(genero__slug_categoria=slug)
+    genero=slug
+    if pelicula.exists():
+        data={
+        'peliculas':pelicula,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'categoria':categoria,
+        'anio_film':anio_film,
+        'genero':genero,
+        }
+        return render(request,"peliculas_categorias.html",data)
+    else:
+        return redirect('principal')
+def pelicula_anio(request,slug):
+    pelicula=peliculas.objects.filter(anio=slug)
+    if pelicula.exists():
+        data={
+        'peliculas':pelicula,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'categoria':categoria,
+        'anio_film':anio_film,
+        }
+        return render(request,"peliculas_anio.html",data)
+    else:
+        return redirect('principal')

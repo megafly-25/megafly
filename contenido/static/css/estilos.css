@@ -112,6 +112,54 @@
                            top: -3px;
                            text-align: center;
                        }
+                       
+                       .sidebar-1 .recomendacion-genero,
+                       .sidebar-2 .recomendacion-genero {
+                           margin: 2em 0;
+                           margin-right: 1em;
+                           padding: 0.5em 0.3em;
+                           background: #191919;
+                           border-radius: 5px;
+                       }
+                       
+                       .sidebar-1 .recomendacion-genero h2,
+                       .sidebar-2 .recomendacion-genero h2 {
+                           font-size: 15px;
+                           color: palevioletred;
+                           padding-bottom: 10px;
+                           text-align: center;
+                       }
+                       
+                       .sidebar-1 .recomendacion-genero ul,
+                       .sidebar-2 .recomendacion-genero ul {
+                           display: flex;
+                           flex-direction: column;
+                           flex-wrap: wrap;
+                           justify-content: space-around;
+                       }
+                       
+                       .sidebar-1 .recomendacion-genero ul a li,
+                       .sidebar-2 .recomendacion-genero ul a li {
+                           color: #f7f7f7;
+                           font-family: Montserrat;
+                           padding-left: 0px;
+                           padding: 5px 0;
+                           text-align: center;
+                           font-size: 15px;
+                           border-bottom: palevioletred solid 2px;
+                           -webkit-transition: all .3s ease;
+                           /* Safari y Chrome */
+                           -moz-transition: all .3s ease;
+                           /* Firefox */
+                           -o-transition: all .3s ease;
+                           /* IE 9 */
+                           -ms-transition: all .3s ease;
+                       }
+                       
+                       .sidebar-1 .recomendacion-genero ul a li:hover,
+                       .sidebar-2 .recomendacion-genero ul a li:hover {
+                           opacity: 0.5;
+                       }
                        /*estilos sidebar 2*/
                        
                        .sidebar-2 {
@@ -439,6 +487,15 @@
                            }
                            .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards {
                                margin-bottom: 2em;
+                           }
+                           .sidebar-1 .recomendacion-genero ul,
+                           .sidebar-2 .recomendacion-genero ul {
+                               flex-direction: row;
+                               justify-content: space-around;
+                           }
+                           .sidebar-1 .recomendacion-genero ul a li,
+                           .sidebar-2 .recomendacion-genero ul a li {
+                               padding: 3px 5px;
                            }
                            .widget-1 .ultimos-agregados,
                            .widget-2 .ultimos-agregados {
