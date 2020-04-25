@@ -193,7 +193,7 @@ class  peliculas(models.Model):
     idiomas=models.CharField(max_length=150,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
     fecha_subida=models.DateField(verbose_name="Fecha de Subida")
-    anio=models.CharField(max_length=4,blank=True,null=True,editable=False)
+    anio=models.CharField(max_length=4,blank=True,null=True)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
     director=models.CharField(max_length=100,verbose_name="Director")
