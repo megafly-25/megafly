@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from django.urls import reverse
+import datetime
 # Create your models here.
 idioma=(
     ("Español Latino","Español Latino"),
@@ -12,6 +13,8 @@ idioma=(
 class categorias(models.Model):
     nombre=models.CharField(max_length=100)
     slug_categoria=models.SlugField(null=True,blank=True)
+    class Meta:
+        ordering = ['nombre',]
     def __str__(self):
         return self.slug_categoria
 def slug_generator_categoria(sender,instance,*args,**kwargs):
@@ -185,14 +188,14 @@ class  peliculas(models.Model):
     nombre_original=models.CharField(max_length=250,verbose_name="Nombre Original:")
     slug_peliculas=models.SlugField(max_length=250,null=True,blank=True)
     descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
-    genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:")
+    genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:",)
     region=models.CharField(max_length=150,blank=True,null=True)
     Author=models.CharField(max_length=150)
     calificacion=models.CharField(max_length=100)
     descargas=models.IntegerField()
     idiomas=models.CharField(max_length=150,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
-    fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
     anio=models.CharField(max_length=4,blank=True,null=True)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
@@ -217,10 +220,13 @@ class  peliculas(models.Model):
     enlacemg5=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Mega 5")
     comparte=models.CharField(max_length=500,blank=True,null=True)
     enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
+    class Meta:
+        ordering = ['nombre',]
     def __str__(self):
         return self.nombre
     def get_absolute_url(self):
         return reverse('pelicula', kwargs={'slug': self.slug_peliculas})
+    
 def slug_generator_peliculas(sender,instance,*args,**kwargs):
     if instance.slug_peliculas:
         return
