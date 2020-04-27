@@ -169,11 +169,14 @@
                 </div>
                 <div class="videos_body">
                     <h1>Ver Pelicula {{pelicula.nombre}} </h1>
-                    <iframe src="https://drive.google.com/file/d/{{pelicula.online}}/preview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                    <div style="position: relative;"> 
+                        <iframe src="https://drive.google.com/file/d/{{pelicula.online}}/preview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" seamless></iframe>
+                        <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">&nbsp;</div>
+                    </div>
                 </div>
                 <div class="trailer_body">
                     <h1>Trailer {{pelicula.nombre}}</h1>
-                    <iframe src="https://www.youtube.com/embed/{{pelicula.trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/{{pelicula.trailer}}"  allowfullscreen></iframe>
                 </div>
                 <div class="capturas_body">
                     <h1>Capturas {{pelicula.nombre}}</h1>
