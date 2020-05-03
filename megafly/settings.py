@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'megaflydb',
-        'USER': 'megaflydb',
+        'USER': 'megafly',
         'PASSWORD':'Jorgeluis',
         'HOST':'localhost',
         'DATABASE_POST':'',

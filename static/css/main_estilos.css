@@ -9,8 +9,8 @@
     }
     
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f1f1f1;
+        font-family: Montserrat, Helvetica, sans-serif;
+        background-color: #191919;
     }
     /*estilos navbar*/
     
@@ -33,34 +33,34 @@
     }
     
     .header .menu ul>li {
-        padding: 0 30px;
+        padding: 0 10px;
         text-align: center;
     }
     
-    .menu li a {
+    .header .menu li a {
         color: #DCD2D2;
         transition: all 0.8s ease 0s;
     }
     
-    .menu li a:hover {
+    .header .menu li a:hover {
         color: #0088a9;
     }
     
-    .menu li:hover>.submenu {
+    .header .menu li:hover>.submenu {
         position: absolute;
         z-index: 1;
         display: flex;
         flex-direction: column;
     }
     
-    .menu li .submenu {
+    .header .menu li .submenu {
         display: none;
         position: relative;
         background: #191919;
         transition: all 0.8s ease 0s;
     }
     
-    .menu li .submenu li {
+    .header .menu li .submenu li {
         padding-left: 10px;
         padding-right: 20px;
         padding-top: 8px;
@@ -69,18 +69,20 @@
         text-align: start;
     }
     
-    button {
-        padding: 9px 25px;
-        background-color: rgba(0, 136, 169, 1);
-        color: #fff;
+    .header button {
+        background: #0088a9;
         border: none;
-        border-radius: 50px;
+        border-radius: 0.3em;
+        padding: 0.5em 0.87em;
+        color: #fff;
+        margin-right: 1.25em;
         cursor: pointer;
-        transition: all 0.3s ease 0s;
+        transition: .5s ease all;
+        font-size: 1.12em;
     }
     
-    button:hover {
-        background-color: rgba(0, 136, 169, 0.8);
+    .header button:hover {
+        opacity: 0.9;
     }
     /*estilos footer*/
     

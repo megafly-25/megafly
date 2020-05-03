@@ -3,7 +3,7 @@ from .models import peliculas,categorias
 from django.views.defaults import page_not_found
 from random import randint
 # Create your views here.
-categoria=categorias.objects.get_queryset().order_by('nombre')
+categoria_genero=categorias.objects.get_queryset().order_by('nombre')
 anio_film=peliculas.objects.values_list('anio',flat=True).distinct().order_by('-anio')
 pocos_requisitos=peliculas.objects.all()[8:16]
 medios_requisitos=peliculas.objects.all()[16:24]
@@ -17,18 +17,39 @@ def mi_error_404(request,exception):
 def robots(request):
     return render(request,"robots.txt", content_type="text/plain")
 def principal(request):
-    pelicula=peliculas.objects.get_queryset().order_by('id')
+    recomend_film1=peliculas.objects.filter(id=81)
+    recomend_film2=peliculas.objects.filter(id=89)
+    recomend_film3=peliculas.objects.filter(id=118)
+    recomend_film4=peliculas.objects.filter(id=8)
+    recomend_film5=peliculas.objects.filter(id=9)
+    recomend_film6=peliculas.objects.filter(id=3)
+    all_data=[]
+    pelicula=peliculas.objects.all()
+    categorias_slug=categorias.objects.values_list('slug_categoria',flat=True).distinct().order_by('nombre')
+    for categoria in categorias_slug:
+        current_data={}
+        current_fil=[]
+        current_fil.append(peliculas.objects.filter(genero__slug_categoria=categoria))
+        current_data['genero']=categoria
+        current_data['pelicula']=current_fil
+        all_data.append(current_data)
     data={
-        'peliculas':pelicula,
         'pocos_requisitos':pocos_requisitos,
         'medios_requisitos':medios_requisitos,
         'altos_requisitos':altos_requisitos,
         'mas_visitados':mas_visitados,
         'mas_descargados':mas_descargados,
         'last_film_add':last_film_add,
-        'categoria':categoria,
+        'categoria_genero':categoria_genero,
         'anio_film':anio_film,
-        
+        'pelicula':pelicula,
+        'all_data' : all_data,
+        'recomend_film1':recomend_film1,
+        'recomend_film2':recomend_film2,
+        'recomend_film3':recomend_film3,
+        'recomend_film4':recomend_film4,
+        'recomend_film5':recomend_film5,
+        'recomend_film6':recomend_film6,
     }
     return render(request,"principal.html",data)
 
@@ -63,6 +84,7 @@ def pelicula(request,slug):
     return render(request,"pelicula.html",data)
 def pelicula_genero(request,slug):
     pelicula=peliculas.objects.filter(genero__slug_categoria=slug)
+    categoria_genero=categorias.objects.get_queryset().order_by('nombre')
     genero=slug
     if pelicula.exists():
         data={
@@ -73,7 +95,7 @@ def pelicula_genero(request,slug):
         'mas_visitados':mas_visitados,
         'mas_descargados':mas_descargados,
         'last_film_add':last_film_add,
-        'categoria':categoria,
+        'categoria_genero':categoria_genero,
         'anio_film':anio_film,
         'genero':genero,
         }
@@ -91,7 +113,7 @@ def pelicula_anio(request,slug):
         'mas_visitados':mas_visitados,
         'mas_descargados':mas_descargados,
         'last_film_add':last_film_add,
-        'categoria':categoria,
+        'categoria_genero':categoria_genero,
         'anio_film':anio_film,
         }
         return render(request,"peliculas_anio.html",data)

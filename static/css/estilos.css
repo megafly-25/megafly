@@ -2,8 +2,8 @@
                            display: grid;
                            grid-gap: 1em;
                            grid-template-columns: repeat(5, 1fr);
-                           grid-template-rows: repeat(7, auto);
-                           grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 contenido contenido contenido sidebar-2" "sidebar-1 widget-1 widget-1 widget-1 sidebar-2" "sidebar-1 widget-2 widget-2 widget-2 sidebar-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
+                           grid-template-rows: repeat(10, auto);
+                           grid-template-areas: "header header header header header" "swiper-container2 swiper-container2 swiper-container2 swiper-container2 swiper-container2" "contenido contenido contenido contenido contenido" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                        }
                        /*estilos Contenido*/
                        
@@ -11,12 +11,16 @@
                            grid-area: header;
                        }
                        
-                       .descripcion-pagina {
-                           grid-area: descripcion-pagina;
+                       .contenedor .swiper-container2 {
+                           grid-area: swiper-container2;
                        }
                        
                        .contenedor .contenido {
                            grid-area: contenido;
+                       }
+                       
+                       .descripcion-pagina {
+                           grid-area: descripcion-pagina;
                        }
                        
                        .contenedor .sidebar-1 {
@@ -67,7 +71,6 @@
                        /*estilos sidebar-1*/
                        
                        .sidebar-1 {
-                           background: #e6e6e6;
                            border-radius: 5px;
                            margin-left: 1em;
                            padding-left: 1em;
@@ -79,20 +82,21 @@
                        }
                        
                        .sidebar-1 .menu-sidebar-1 li a {
-                           color: #2460e8;
+                           color: #fff;
                            border-bottom: palevioletred solid 2px;
                        }
                        
                        .sidebar-1 .menu-sidebar-1 ul .menu-sidebar-1-cards {
                            display: flex;
+                           flex-direction: row;
                            flex-wrap: wrap;
                            padding-bottom: 2em;
                        }
                        
                        .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card {
-                           width: 34%;
-                           max-height: 100px;
-                           margin: 17px;
+                           width: 11%;
+                           height: 200px;
+                           margin: 1em 5px;
                            background: #fff;
                            z-index: 1;
                        }
@@ -107,7 +111,7 @@
                        
                        .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a h3 {
                            font-size: 14px;
-                           color: #2b2b2b;
+                           color: #fff;
                            position: relative;
                            top: -3px;
                            text-align: center;
@@ -115,10 +119,8 @@
                        
                        .sidebar-1 .recomendacion-genero,
                        .sidebar-2 .recomendacion-genero {
-                           margin: 2em 0;
-                           margin-right: 1em;
+                           margin: 2em 1em;
                            padding: 0.5em 0.3em;
-                           background: #191919;
                            border-radius: 5px;
                        }
                        
@@ -133,7 +135,7 @@
                        .sidebar-1 .recomendacion-genero ul,
                        .sidebar-2 .recomendacion-genero ul {
                            display: flex;
-                           flex-direction: column;
+                           flex-direction: row;
                            flex-wrap: wrap;
                            justify-content: space-around;
                        }
@@ -142,8 +144,8 @@
                        .sidebar-2 .recomendacion-genero ul a li {
                            color: #f7f7f7;
                            font-family: Montserrat;
-                           padding-left: 0px;
-                           padding: 5px 0;
+                           padding: 3px 10px;
+                           margin: 5px 5px;
                            text-align: center;
                            font-size: 15px;
                            border-bottom: palevioletred solid 2px;
@@ -163,7 +165,6 @@
                        /*estilos sidebar 2*/
                        
                        .sidebar-2 {
-                           background: #e6e6e6;
                            border-radius: 5px;
                            margin-right: 1em;
                            padding-left: 1em;
@@ -174,24 +175,30 @@
                            color: palevioletred;
                        }
                        
-                       .sidebar-2 .card {
+                       .sidebar-2 .sidebar2-main {
+                           display: flex;
+                           flex-direction: row;
+                           flex-wrap: wrap;
+                       }
+                       
+                       .sidebar-2 .sidebar2-main .card {
                            display: flex;
                            flex-direction: row;
                            width: 200px;
                            height: 100px;
-                           margin: 10px 0;
+                           margin: 1em 1em;
                            border-radius: 5px;
                            padding: 5px 10px;
-                           background: #f7f7f7;
+                           background: #fff;
                        }
                        
-                       .sidebar-2 .card .card-img {
+                       .sidebar-2 .sidebar2-main .card .card-img {
                            width: 70px;
                            height: 90px;
                            background: rgba(0, 0, 0, 0.5);
                        }
                        
-                       .sidebar-2 .card .card-img a img {
+                       .sidebar-2 .sidebar2-main .card .card-img a img {
                            transition: all 0.5 ease 0s;
                            width: 70px;
                            height: 90px;
@@ -199,11 +206,11 @@
                            background-color: rgb(0, 0, 0);
                        }
                        
-                       .sidebar-2 .card h3 {
+                       .sidebar-2 .sidebar2-main .card h3 {
                            padding: 10px 5px;
                        }
                        
-                       .sidebar-2 .card a h3 {
+                       .sidebar-2 .sidebar2-main .card a h3 {
                            font-size: 14px;
                            color: #2b2b2b;
                        }
@@ -230,14 +237,14 @@
                        .widget-2 .ultimos-agregados {
                            display: flex;
                            flex-wrap: wrap;
-                           padding: 1em 0;
+                           padding: 0.2em 1em;
                        }
                        
                        .widget-1 .ultimos-agregados .card,
                        .widget-2 .ultimos-agregados .card {
-                           width: 15%;
-                           max-height: 150px;
-                           margin: 15px;
+                           width: 13%;
+                           max-height: 200px;
+                           margin: 2em 3px;
                            background: #fff;
                        }
                        
@@ -245,7 +252,7 @@
                        .widget-2 .card a img {
                            transition: all 0.5 ease 0s;
                            width: 100%;
-                           max-height: 150px;
+                           max-height: 200px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
                            background-color: rgb(0, 0, 0);
                        }
@@ -254,43 +261,124 @@
                        .widget-2 .ultimos-agregados .card a h3 {
                            font-size: 12px;
                            text-align: center;
-                           color: #2b2b2b;
+                           color: #fff;
+                       }
+                       /*estilos resumen*/
+                       
+                       .contenedor .s2 {
+                           width: 525%;
+                           margin: 0;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide {
+                           position: relative;
+                           font-size: 16px;
+                           height: 35em;
+                           background-size: cover;
+                           -moz-background-size: cover;
+                           -webkit-background-size: cover;
+                           -o-background-size: cover;
+                           display: flex;
+                           align-items: center;
+                           justify-content: start;
+                           color: #fff;
+                           padding-top: 6em;
+                           padding-bottom: 2em;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen {
+                           justify-content: start;
+                           margin: 0 6em;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen h1 {
+                           font-size: 2.5em;
+                           margin-bottom: 0.5em;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen p {
+                           font-size: 1em;
+                           line-height: 1.75em;
+                           max-width: 50%;
+                           margin-bottom: 1em;
+                           color: #ccc;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen>a {
+                           background: rgba(0, 0, 0, 0.5);
+                           border-radius: 0.3em;
+                           padding: 1em 1.87em;
+                           color: #fff;
+                           margin-right: 2em;
+                           cursor: pointer;
+                           transition: .5s ease all;
+                           font-size: 1em;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen>a:hover {
+                           opacity: 0.5;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen .boton1 img {
+                           width: 30px;
+                           margin: 0 5px;
+                       }
+                       
+                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen .boton2 img {
+                           position: relative;
+                           width: 15px;
+                           margin: 0 5px;
+                           top: 2px;
                        }
                        /*estilos contenido*/
                        
+                       .contenedor .contenido {
+                           padding: 0 1em;
+                       }
+                       
                        .contenedor .contenido h1 {
                            color: palevioletred;
+                           padding-bottom: 0.3em;
+                           font-size: 1.2em;
+                           align-content: center;
                        }
                        
-                       .contenedor .contenido .contenido-main {
-                           display: flex;
-                           flex-wrap: wrap;
-                           padding: 10px 19px;
+                       .contenido .s3 {
+                           display: none;
                        }
                        
-                       .contenido .contenido-main .card {
-                           max-width: 180px;
-                           max-height: 230px;
+                       .contenedor .contenido .swiper-container {
+                           padding: 1.5em 0;
+                           padding-bottom: 2.5em;
+                       }
+                       
+                       .contenedor .contenido .swiper-container .swipter-button-next,
+                       .contenedor .contenido .swiper-container .swipter-button-prev {
+                           color: #000;
+                           background: #000;
+                       }
+                       
+                       .contenido .swiper-container .swiper-wrapper .swiper-slide {
+                           width: 185px;
+                           height: 250px;
                            text-align: center;
-                           margin: 3px;
+                           margin: 1px;
                            border-radius: 5px;
-                           padding: 0;
                            transition: all 0.5 ease 0s;
-                           margin-bottom: 2em;
                        }
                        
-                       .contenido .contenido-main .card a>h2 {
+                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>h2 {
                            /*position: relative;*/
                            font-size: 14px;
                            /*z-index: 1;
                            top: -38px;*/
-                           color: #191919;
+                           color: #fff;
                        }
                        
-                       .contenido .contenido-main .card a>.resumen {
+                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen {
                            display: none;
                            position: relative;
-                           z-index: 1;
+                           z-index: 2;
                            text-align: justify;
                            padding: 5px;
                            top: -280px;
@@ -301,49 +389,50 @@
                            padding: 5px 10px;
                            color: #191919;
                            transition: all 0.3s ease 0s;
+                           margin-bottom: 50px;
                        }
                        
-                       .contenido .contenido-main .card a>.resumen p {
+                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen p {
                            font-size: 13px;
                        }
                        
-                       .contenido .contenido-main .card a>.resumen h3 {
+                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen h3 {
                            font-size: 13px;
                            color: rgb(19, 50, 82);
                            text-align: center;
                            padding-bottom: 3px;
                        }
                        
-                       .contenido .contenido-main .card a>.resumen h6 {
+                       .contenido .swiper-container .swiper-wrapper .card a>.resumen h6 {
                            font-size: 12px;
                        }
                        
-                       .contenedor .contenido .contenido-main .card img {
+                       .contenedor .contenido .swiper-container .swiper-wrapper .swiper-slide img {
                            width: 100%;
                            height: 100%;
                            transition: all 0.5 ease 0s;
                            border-radius: 5px;
                            box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.5);
-                           -webkit-transition: all .9s ease;
+                           -webkit-transition: all .6s ease;
                            /* Safari y Chrome */
-                           -moz-transition: all .9s ease;
+                           -moz-transition: all .6s ease;
                            /* Firefox */
-                           -o-transition: all .9s ease;
+                           -o-transition: all .6s ease;
                            /* IE 9 */
-                           -ms-transition: all .9s ease;
+                           -ms-transition: all .6s ease;
                        }
                        
-                       .contenido-main .card img:hover,
-                       .contenido-main .card a:hover {
-                           -webkit-transform: scale(2.25);
-                           -moz-transform: scale(1.25);
-                           -ms-transform: scale(1.25);
-                           -o-transform: scale(1.25);
-                           transform: scale(1.25);
+                       .swiper-container .swiper-wrapper .swiper-slide img:hover,
+                       .swiper-container .swiper-wrapper .swiper-slide a:hover {
+                           -webkit-transform: scale(1.15);
+                           -moz-transform: scale(1.15);
+                           -ms-transform: scale(1.15);
+                           -o-transform: scale(1.15);
+                           transform: scale(1.15);
                        }
                        
-                       .contenido-main .card a:hover>.resumen {
-                           display: block;
+                       .swiper-container .swiper-wrapper .swiper-slide a:hover>.resumen {
+                           display: none;
                        }
                        
                        .informacion-megafly {
@@ -447,7 +536,7 @@
                                grid-template-rows: repeat(9, auto);
                                grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina""contenido contenido contenido contenido contenido" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                            }
-                           .contenido .contenido-main .card {
+                           .contenido .s3 .swiper-wrapper .card {
                                /*max-width: 70px;
                                max-height: 110px;*/
                                width: 30%;
@@ -457,14 +546,26 @@
                                padding: 0;
                                margin-bottom: 3em;
                            }
-                           .contenido .contenido-main .card a img {
+                           .contenido .s2 {
+                               display: none;
+                           }
+                           .contenedor .s2 .swiper-wrapper .swiper-slide {
+                               display: none;
+                           }
+                           .contenido .s1 {
+                               display: none;
+                           }
+                           .contenido .s3 {
+                               display: block;
+                           }
+                           .contenido .s3 .swiper-wrapper .card a img {
                                width: 100%;
                                height: 100%;
                            }
-                           .contenido .contenido-main .card a h2 {
+                           .contenido .s3 .swiper-wrapper .card a h2 {
                                font-size: 13px;
                            }
-                           .contenido .contenido-main .card a>.resumen {
+                           .contenido .s3.swiper-wrapper .card a>.resumen {
                                display: none;
                            }
                            .header .menu ul {

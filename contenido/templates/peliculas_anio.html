@@ -78,6 +78,7 @@
     <meta name="twitter:url" content="https://www.megaflypeliculas.ga/peliculas/del/{{pe.anio}}">
     <meta name="twitter:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
     <meta name="twitter:image:alt" content="megafly ofrecemos una variedad de peliculas online gratis, para descargar por nuestros servidores google drive y mega">
+     <link href="{% static 'css/swiper.min.css'%}" rel="stylesheet">
     <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
     <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
     <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
@@ -86,11 +87,57 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {% block contenido %}
 {% include "superior/descripcion.html"%}
+        <main class="contenido">
+            <h1>Catalogo de Juegos y Peliculas gratis online por Megafly en servidores Google drive y Mega</h1>
+            <div class="swiper-container s1">
+                <div class="swiper-wrapper">
+                    {% for pelis in peliculas %}
+                        <div class="swiper-slide">
+                            <a href="{%url 'pelicula' slug=pelis.slug_peliculas %}"><img src="{{pelis.img1.url}}" alt="{{pelis.nombre_original}}">
+                                <h2>{{pelis.nombre}}</h2>
+                                <div class="resumen">
+                                    <h3>{{pelis.nombre}}</h3>
+                                    <p>{{pelis.descripcion}}</p>
+                                    <h6>Calificacion: {{pelis.calificacion}}</h6>
+                                    <h6>Descargas: {{pelis.descargas}}</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {%endfor%}
+                </div>
+                
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <!--responsive movil-->
+            <div class="swiper-container s3">
+                <div class="swiper-wrapper">
+                    {% for pelis in peliculas %}
+                        <div class="swiper-slide">
+                            <a href="{%url 'pelicula' slug=pelis.slug_peliculas %}"><img src="{{pelis.img1.url}}" alt="{{pelis.nombre_original}}">
+                                <h2>{{pelis.nombre}}</h2>
+                                <div class="resumen">
+                                    <h3>{{pelis.nombre}}</h3>
+                                    <p>{{pelis.descripcion}}</p>
+                                    <h6>Calificacion: {{pelis.calificacion}}</h6>
+                                    <h6>Descargas: {{pelis.descargas}}</h6>
+                                </div>
+                            </a>
+                        </div>
+                        {%endfor%}
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+           
+        </main>
         <aside class="sidebar-1">
             <h3>Busqueda Avanzada</h3>
             <nav class="menu-sidebar-1">
                 <ul>
-                    <li><a href="">Pocos Requisitos</a></li>
+                    <li><a href="">Pocos Requisitos:</a></li>
                     <div class="menu-sidebar-1-cards">
                     {% for po_re in pocos_requisitos%}
                         <div class="card">
@@ -100,7 +147,7 @@
                         </div>
                     {%endfor%}                      
                     </div>
-                    <li><a href="">Medios Requisitos</a></li>
+                    <li><a href="">Medios Requisitos:</a></li>
                     <div class="menu-sidebar-1-cards">
                         {% for me_re in medios_requisitos%}
                             <div class="card">
@@ -110,7 +157,7 @@
                             </div>
                         {%endfor%}
                     </div>
-                    <li><a href="">Altos Requisitos </a></li>
+                    <li><a href="">Altos Requisitos :</a></li>
                     <div class="menu-sidebar-1-cards">
                         {% for al_re in altos_requisitos%}
                         <div class="card">
@@ -126,49 +173,38 @@
             <div class="recomendacion-genero">
                 <h2>Ver Peliculas Por Generos En Google Drive</h2>
                     <ul> 
-                    {%for cat in categoria%}
+                    {%for cat in categoria_genero%}
                          <a href="{% url 'pelicula_genero' slug=cat.slug_categoria %}"><li>{{cat.nombre}}</li></a>             
                     {%endfor%}
                     </ul>
             </div>
         </aside>
-        <main class="contenido">
-            <h1>Catalogo de Juegos y Peliculas gratis online por Megafly en servidores Google drive y Mega</h1>
-            <div class="contenido-main">
-            {% for pelicula in peliculas%}
-                <div class="card">
-                    <a href="{% url 'pelicula' slug=pelicula.slug_peliculas %}"><img src="{{pelicula.img1.url}}" alt="{{pelicula.nombre_original}}">
-                        <h2>{{pelicula.nombre}}</h2>
-                        <div class="resumen">
-                            <h3>{{pelicula.nombre}}</h3>
-                            <p>{{pelicula.descripcion}}</p>
-                            <h6>Calificacion: {{pelicula.calificacion}}</h6>
-                            <h6>Descargas: {{pelicula.descargas}}</h6>
-                        </div>
-                    </a>
-                </div>
-                {%endfor%}
-            </div>
-        </main>
         <aside class="sidebar-2">
             <h2>Peliculas mas Visitados En Google Drive</h2>
+            <div class="sidebar2-main">
             {% for mas_vi in mas_visitados%}
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="{% url 'pelicula' slug=mas_vi.slug_peliculas %}"><img src="{{mas_vi.img1.url}}" alt="{{mas_vi.nombre}}"></a>
+                       
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="{% url 'pelicula' slug=mas_vi.slug_peliculas %}"><img src="{{mas_vi.img1.url}}" alt="{{mas_vi.nombre}}"></a>
+                                </div>
+                                <a href=""><h3>{{mas_vi.nombre}}</h3></a>
                             </div>
-                            <a href=""><h3>{{mas_vi.nombre}}</h3></a>
-                        </div>
-            {%endfor%} 
-            <h2>Peliculas mas Descargadas En Google Drive</h2>
-            {% for mas_des in mas_descargados%}
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="{% url 'pelicula' slug=mas_des.slug_peliculas %}"><img src="{{mas_des.img1.url}}" alt="{{mas_des.nombre}}"></a>
-                            </div>    
-                            <a href=""><h3>{{mas_des.nombre}}</h3></a>
-                        </div>
+                       
             {%endfor%}
+            </div> 
+            <h2>Peliculas mas Descargadas En Google Drive</h2>
+            <div class="sidebar2-main">
+                {% for mas_des in mas_descargados%}
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="{% url 'pelicula' slug=mas_des.slug_peliculas %}"><img src="{{mas_des.img1.url}}" alt="{{mas_des.nombre}}"></a>
+                                </div>    
+                                <a href=""><h3>{{mas_des.nombre}}</h3></a>
+                            </div>
+                        
+                {%endfor%}
+            </div>
             <div class="recomendacion-genero">
                 <h2>Ver Peliculas Por Año En Google Drive</h2>
                     <ul> 
@@ -219,3 +255,7 @@
                 </div>
         </div>
 {% endblock contenido %}
+{% block script %}
+        <script src="{% static 'js/swiper.min.js'%}"></script>
+        <script src="{% static 'js/slider-megafly.js'%}"></script>
+{% endblock script %}
