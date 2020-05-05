@@ -10,6 +10,12 @@ idioma=(
     ("Español Subtitulado","Español Subtitulado"),
     ("Ingles","Ingles"),
 )
+estado=(
+    ("Emision","Emision"),
+    ("Finalizado","Finalizado"),
+    ("Temporada Final","Temporada Final"),
+    
+)
 class categorias(models.Model):
     nombre=models.CharField(max_length=100)
     slug_categoria=models.SlugField(null=True,blank=True)
@@ -183,7 +189,7 @@ def slug_generator_gamesps3(sender,instance,*args,**kwargs):
     instance.slug_gamesps3=slugify(instance.nombre)
 pre_save.connect(slug_generator_gamesps3,sender=gamesps3)
 
-class  peliculas(models.Model):
+class peliculas(models.Model):
     nombre=models.CharField(max_length=250,verbose_name="Nombre:")
     nombre_original=models.CharField(max_length=250,verbose_name="Nombre Original:")
     slug_peliculas=models.SlugField(max_length=250,null=True,blank=True)
@@ -238,3 +244,48 @@ def only_year(sender,instance,*args,**kwargs):
         return
     instance.anio=instance.fecha_estreno.year
 pre_save.connect(only_year,sender=peliculas)
+
+class series(models.Model):
+    nombre=models.CharField(max_length=250,verbose_name="Nombre:")
+    nombre_original=models.CharField(max_length=250,verbose_name="Nombre Original:")
+    slug_serie=models.SlugField(max_length=250,null=True,blank=True)
+    descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
+    genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:",)
+    region=models.CharField(max_length=150,blank=True,null=True)
+    Author=models.CharField(max_length=150)
+    calificacion=models.CharField(max_length=100)
+    descargas=models.IntegerField()
+    idiomas=models.CharField(max_length=150,choices=idioma,null=True,blank=True,default=idioma[0])
+    fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
+    anio=models.CharField(max_length=4,blank=True,null=True)
+    trailer=models.CharField(max_length=100)
+    estado=models.CharField(max_length=150,verbose_name="Estado:",choices=estado,null=True,blank=True,default=estado[0])
+    director=models.CharField(max_length=100,verbose_name="Director")
+    reparto=models.CharField(max_length=1000,verbose_name="Reparto")
+    online=models.CharField(max_length=500,verbose_name="Link Online")
+    img1=models.ImageField(verbose_name="Subir Imagen 1",blank=True,null=True)
+    img2=models.ImageField(verbose_name="Subir Imagen 2",blank=True,null=True)
+    img3=models.ImageField(verbose_name="Subir Imagen 3",blank=True,null=True)
+    img4=models.ImageField(verbose_name="Subir Imagen 4",blank=True,null=True)
+    img5=models.ImageField(verbose_name="Subir Imagen 5",blank=True,null=True)
+    enlacegd=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace Google Drive")
+    comparte=models.CharField(max_length=500,blank=True,null=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
+    class Meta:
+        ordering = ['nombre',]
+    def __str__(self):
+        return self.nombre
+    def get_absolute_url(self):
+        return reverse('serie', kwargs={'slug': self.slug_serie})
+def slug_generator_serie(sender,instance,*args,**kwargs):
+    if instance.slug_serie:
+        return
+    instance.slug_serie=slugify(instance.nombre)
+pre_save.connect(slug_generator_serie,sender=series)
+
+def only_year_serie(sender,instance,*args,**kwargs):
+    if instance.anio:
+        return
+    instance.anio=instance.fecha_estreno.year
+pre_save.connect(only_year,sender=series)

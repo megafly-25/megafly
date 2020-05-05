@@ -72,9 +72,8 @@
                        
                        .sidebar-1 {
                            border-radius: 5px;
-                           margin-left: 1em;
-                           padding-left: 1em;
                            padding-top: 10px;
+                           margin: 0 1em;
                        }
                        
                        .sidebar-1 h3 {
@@ -126,7 +125,7 @@
                        
                        .sidebar-1 .recomendacion-genero h2,
                        .sidebar-2 .recomendacion-genero h2 {
-                           font-size: 15px;
+                           font-size: 1.1em;
                            color: palevioletred;
                            padding-bottom: 10px;
                            text-align: center;
@@ -257,6 +256,11 @@
                            background-color: rgb(0, 0, 0);
                        }
                        
+                       .widget-1 .ultimos-agregados .card img,
+                       .widget-2 .ultimos-agregados .card img {
+                           height: 100%;
+                       }
+                       
                        .widget-1 .ultimos-agregados .card a h3,
                        .widget-2 .ultimos-agregados .card a h3 {
                            font-size: 12px;
@@ -343,31 +347,25 @@
                            align-content: center;
                        }
                        
-                       .contenido .s3 {
-                           display: none;
-                       }
-                       
-                       .contenedor .contenido .swiper-container {
+                       .contenedor .contenido .contenido_resumen {
                            padding: 1.5em 0;
                            padding-bottom: 2.5em;
+                           display: flex;
+                           flex-direction: row;
+                           flex-wrap: wrap;
                        }
                        
-                       .contenedor .contenido .swiper-container .swipter-button-next,
-                       .contenedor .contenido .swiper-container .swipter-button-prev {
-                           color: #000;
-                           background: #000;
-                       }
-                       
-                       .contenido .swiper-container .swiper-wrapper .swiper-slide {
+                       .contenido .contenido_resumen .card {
                            width: 185px;
                            height: 250px;
                            text-align: center;
                            margin: 1px;
                            border-radius: 5px;
+                           margin-bottom: 2.5em;
                            transition: all 0.5 ease 0s;
                        }
                        
-                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>h2 {
+                       .contenido .contenido_resumen .card a>h2 {
                            /*position: relative;*/
                            font-size: 14px;
                            /*z-index: 1;
@@ -375,7 +373,7 @@
                            color: #fff;
                        }
                        
-                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen {
+                       .contenido .contenido_resumen .card a>.resumen {
                            display: none;
                            position: relative;
                            z-index: 2;
@@ -392,22 +390,22 @@
                            margin-bottom: 50px;
                        }
                        
-                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen p {
+                       .contenido .contenido_resumen .card a>.resumen p {
                            font-size: 13px;
                        }
                        
-                       .contenido .swiper-container .swiper-wrapper .swiper-slide a>.resumen h3 {
+                       .contenido .contenido_resumen .card a>.resumen h3 {
                            font-size: 13px;
                            color: rgb(19, 50, 82);
                            text-align: center;
                            padding-bottom: 3px;
                        }
                        
-                       .contenido .swiper-container .swiper-wrapper .card a>.resumen h6 {
+                       .contenido .contenido_resumen .card a>.resumen h6 {
                            font-size: 12px;
                        }
                        
-                       .contenedor .contenido .swiper-container .swiper-wrapper .swiper-slide img {
+                       .contenedor .contenido .contenido_resumen .card img {
                            width: 100%;
                            height: 100%;
                            transition: all 0.5 ease 0s;
@@ -422,8 +420,8 @@
                            -ms-transition: all .6s ease;
                        }
                        
-                       .swiper-container .swiper-wrapper .swiper-slide img:hover,
-                       .swiper-container .swiper-wrapper .swiper-slide a:hover {
+                       .contenido_resumen .card img:hover,
+                       .contenido_resumen .card a:hover {
                            -webkit-transform: scale(1.15);
                            -moz-transform: scale(1.15);
                            -ms-transform: scale(1.15);
@@ -431,8 +429,8 @@
                            transform: scale(1.15);
                        }
                        
-                       .swiper-container .swiper-wrapper .swiper-slide a:hover>.resumen {
-                           display: none;
+                       .contenido_resumen .card a:hover>.resumen {
+                           display: block;
                        }
                        
                        .informacion-megafly {
@@ -536,15 +534,21 @@
                                grid-template-rows: repeat(9, auto);
                                grid-template-areas: "header header header header header" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina""contenido contenido contenido contenido contenido" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                            }
-                           .contenido .s3 .swiper-wrapper .card {
-                               /*max-width: 70px;
-                               max-height: 110px;*/
-                               width: 30%;
+                           .contenido h1 {
+                               font-size: 18px;
+                               align-content: center;
+                           }
+                           .contenido .contenido_resumen .card {
+                               width: 31%;
+                               height: 170px;
                                text-align: center;
-                               margin: 3px;
+                               margin: 1.2em 3px;
                                border-radius: 5px;
                                padding: 0;
                                margin-bottom: 3em;
+                           }
+                           .contenido .contenido_resumen .card h2 {
+                               font-size: 12px;
                            }
                            .contenido .s2 {
                                display: none;
@@ -555,19 +559,6 @@
                            .contenido .s1 {
                                display: none;
                            }
-                           .contenido .s3 {
-                               display: block;
-                           }
-                           .contenido .s3 .swiper-wrapper .card a img {
-                               width: 100%;
-                               height: 100%;
-                           }
-                           .contenido .s3 .swiper-wrapper .card a h2 {
-                               font-size: 13px;
-                           }
-                           .contenido .s3.swiper-wrapper .card a>.resumen {
-                               display: none;
-                           }
                            .header .menu ul {
                                flex-direction: column;
                            }
@@ -575,9 +566,9 @@
                                padding: 5px 0;
                            }
                            .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card {
-                               width: 25%;
+                               width: 30%;
                                max-height: 150px;
-                               margin: 1em 0.3em;
+                               margin: 2em 0.1em;
                            }
                            .sidebar-1 .menu-sidebar-1 .menu-sidebar-1-cards .card a img {
                                width: 100%;
@@ -596,7 +587,7 @@
                            }
                            .sidebar-1 .recomendacion-genero ul a li,
                            .sidebar-2 .recomendacion-genero ul a li {
-                               padding: 3px 5px;
+                               padding: 3px 3px;
                            }
                            .widget-1 .ultimos-agregados,
                            .widget-2 .ultimos-agregados {
@@ -605,11 +596,11 @@
                            }
                            .widget-1 .ultimos-agregados .card,
                            .widget-2 .ultimos-agregados .card {
-                               width: 20%;
-                               height: 100px;
-                               margin: 5px;
+                               width: 33%;
+                               height: 150px;
+                               margin: 10px;
+                               margin-bottom: 5.5em;
                                background: #fff;
-                               margin-bottom: 30px;
                            }
                            .widget-1 .ultimos-agregados .card img,
                            .widget-2 .ultimos-agregados .card img {
@@ -617,7 +608,7 @@
                            }
                            .widget-1 .ultimos-agregados .card a h3,
                            .widget-2 .ultimos-agregados .card a h3 {
-                               font-size: 13px;
+                               font-size: 12px;
                            }
                            .informacion-megafly .informacion {
                                flex-direction: column;

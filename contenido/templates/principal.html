@@ -158,20 +158,16 @@
                             <a class="boton2" href="{% url 'pelicula' slug=recom_pe.slug_peliculas %}"><img src="{% static 'imagenes/informacion-megafly.png'%}" alt="{{recom_pe.nombre}}">Más Informacion</a>
                         </div>
                     </div>
-                    {%endfor%}
-                          
+                    {%endfor%}                         
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
         <main class="contenido">
             <h1>Catalogo de Juegos y Peliculas gratis online por Megafly en servidores Google drive y Mega</h1>
-            {%for item in all_data %}
-            <div class="swiper-container s1">
-                <div class="swiper-wrapper">
-                    {% for peli in item.pelicula%}
-                     {% for pelis in peli%}
-                        <div class="swiper-slide">
+            <div class="contenido_resumen">
+                     {% for pelis in peliculas%}
+                        <div class="card">
                             <a href="{%url 'pelicula' slug=pelis.slug_peliculas %}"><img src="{{pelis.img1.url}}" alt="{{pelis.nombre_original}}">
                                 <h2>{{pelis.nombre}}</h2>
                                 <div class="resumen">
@@ -183,40 +179,8 @@
                             </a>
                         </div>
                         {%endfor%}
-                        {%endfor%}
-                </div>
-                
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            {%endfor%}
-            <!--responsive movil-->
-            {%for item in all_data %}
-            <div class="swiper-container s3">
-                <div class="swiper-wrapper">
-                    {% for peli in item.pelicula%}
-                     {% for pelis in peli%}
-                        <div class="swiper-slide">
-                            <a href="{%url 'pelicula' slug=pelis.slug_peliculas %}"><img src="{{pelis.img1.url}}" alt="{{pelis.nombre_original}}">
-                                <h2>{{pelis.nombre}}</h2>
-                                <div class="resumen">
-                                    <h3>{{pelis.nombre}}</h3>
-                                    <p>{{pelis.descripcion}}</p>
-                                    <h6>Calificacion: {{pelis.calificacion}}</h6>
-                                    <h6>Descargas: {{pelis.descargas}}</h6>
-                                </div>
-                            </a>
-                        </div>
-                        {%endfor%}
-                        {%endfor%}
-                </div>
-                
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            {%endfor%}
+            </div>          
+            <!--responsive movil-->          
         </main>
          {% include "superior/descripcion.html"%}
         <aside class="sidebar-1">

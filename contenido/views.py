@@ -23,17 +23,18 @@ def principal(request):
     recomend_film4=peliculas.objects.filter(id=8)
     recomend_film5=peliculas.objects.filter(id=9)
     recomend_film6=peliculas.objects.filter(id=3)
-    all_data=[]
+    #all_data=[]
     pelicula=peliculas.objects.all()
     categorias_slug=categorias.objects.values_list('slug_categoria',flat=True).distinct().order_by('nombre')
-    for categoria in categorias_slug:
-        current_data={}
-        current_fil=[]
-        current_fil.append(peliculas.objects.filter(genero__slug_categoria=categoria))
-        current_data['genero']=categoria
-        current_data['pelicula']=current_fil
-        all_data.append(current_data)
+    #for categoria in categorias_slug:
+    #    current_data={}
+    #    current_fil=[]
+    #    current_fil.append(peliculas.objects.filter(genero__slug_categoria=categoria))
+    #    current_data['genero']=categoria
+    #    current_data['pelicula']=current_fil
+    #    all_data.append(current_data)
     data={
+        'peliculas':pelicula,
         'pocos_requisitos':pocos_requisitos,
         'medios_requisitos':medios_requisitos,
         'altos_requisitos':altos_requisitos,
@@ -42,8 +43,6 @@ def principal(request):
         'last_film_add':last_film_add,
         'categoria_genero':categoria_genero,
         'anio_film':anio_film,
-        'pelicula':pelicula,
-        'all_data' : all_data,
         'recomend_film1':recomend_film1,
         'recomend_film2':recomend_film2,
         'recomend_film3':recomend_film3,
@@ -82,6 +81,36 @@ def pelicula(request,slug):
       
     }
     return render(request,"pelicula.html",data)
+def series(request,slug):
+    pelicula=get_object_or_404(peliculas,slug_peliculas=slug)
+    count=peliculas.objects.count()
+    recomendacion1=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion2=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion3=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion4=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion5=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion6=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion7=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion8=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion9=peliculas.objects.all()[randint(0,count-1)]
+    recomendacion10=peliculas.objects.all()[randint(0,count-1)]
+    data={
+        'pelicula':pelicula,
+        'recomendacion1':recomendacion1,
+        'recomendacion2':recomendacion2,
+        'recomendacion3':recomendacion3,
+        'recomendacion4':recomendacion4,
+        'recomendacion5':recomendacion5,
+        'recomendacion6':recomendacion6,
+        'recomendacion7':recomendacion7,
+        'recomendacion8':recomendacion8,
+        'recomendacion9':recomendacion9,
+        'recomendacion10':recomendacion10,
+
+      
+    }
+    return render(request,"series.html",data)
+
 def pelicula_genero(request,slug):
     pelicula=peliculas.objects.filter(genero__slug_categoria=slug)
     categoria_genero=categorias.objects.get_queryset().order_by('nombre')

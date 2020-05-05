@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import categorias,gamespc,gamespsx,gamesps2,gamesps3,peliculas
+from .models import categorias,gamespc,gamespsx,gamesps2,gamesps3,peliculas,series
 # Register your models here.
 class PeliculaAdmin(admin.ModelAdmin):
     list_display=['nombre','fecha_estreno','online','disco']
@@ -16,6 +16,7 @@ admin.site.register(gamespsx)
 admin.site.register(gamesps2)
 admin.site.register(gamesps3)
 admin.site.register(peliculas,PeliculaAdmin)
+admin.site.register(series)
 admin.site.site_header="Megafly Admin"
 admin.site.index_title="Megafly Admin"
 admin.site.site_title="Megafly Admin"
