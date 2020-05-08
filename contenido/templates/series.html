@@ -137,7 +137,7 @@
                     <div class="temporadas_g"> 
                         <div class="card_temporada">
                             {%for temp in temporada%}
-                                <a href="{% url 'temporada_serie' slug=temp.slug_temporada nombre=serie.nombre temporada_slug=temp.ntemporada.slug_ntemporada%}"><h2>{{temp.ntemporada.nombre}} de {{serie.nombre}} "{{temp.nombre}}"</h2></a>
+                                <a href="{% url 'temporada_serie' slug=temp.slug_temporada nombre=serie.slug_serie temporada_slug=temp.ntemporada.slug_ntemporada%}"><h2>{{temp.ntemporada.nombre}} de {{serie.nombre}} "{{temp.nombre}}"</h2></a>
                             {%endfor%}
                         </div>
                     </div>

@@ -103,12 +103,13 @@ def temporada_serie(request,slug,nombre,temporada_slug):
     temporada_serie=capitulos.objects.filter(temporada__slug_temporada=slug)
     ntemporadas=ntemporada.objects.filter(slug_ntemporada=temporada_slug)
     temporada=temporadas.objects.filter(slug_temporada=slug)
+    serie=series.objects.filter(slug_serie=nombre)
     count=series.objects.count()
     recomendacion1=peliculas.objects.all()[randint(0,count-1)]
     data={
         'pelicula':pelicula,
         'recomendacion1':recomendacion1,
-        'nombre':nombre,
+        'serie':serie,
         'temporada_slug':temporada_slug,
         'temporada_serie':temporada_serie,
         'ntemporada':ntemporadas,

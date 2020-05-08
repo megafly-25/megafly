@@ -6,9 +6,9 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": "ver peliculas online gratis",
+    "name": "ver {{serie.nombre}}/{{temporada_slug}}/{{temp.slug_temporada}} online gratis",
     "author": "Megafly",
-    "url": "https://www.megaflypeliculas.ga/{{nombre}}/{{temporada_slug}}/{{temp.slug_temporada}}",
+    "url": "https://www.megaflypeliculas.ga/{{serie.nombre}}/{{temporada_slug}}/{{temp.slug_temporada}}",
     "address": "Peru",
     "sameAs": [
       "https://www.facebook.com/groups/154149275933711/"
@@ -52,37 +52,37 @@
 {%for ntem in ntemporada%}
 {%for tem in temporada%}
 <title>
-    Ver {{nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly
+    Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly
 </title>
-<meta name="description" content="{{nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta name="description" content="{{serie.nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-<meta name="keywords" content="Ver Serie {{nombre}} {{ntem.nombre}}, ver Serie Online {{nombre}} {{ntem.nombre}}, ver serie {{nombre}} {{ntem.nombre}} a la mejora calidad, descarga serie {{nombre}} {{ntem.nombre}}, descargar serie {{nombre}} {{ntem.nombre}} por nuestros servidores Google Drive, Mega">
+<meta name="keywords" content="Ver Serie {{serie.nombre}} {{ntem.nombre}}, ver Serie Online {{serie.nombre}} {{ntem.nombre}}, ver serie {{serie.nombre}} {{ntem.nombre}} a la mejora calidad, descarga serie {{serie.nombre}} {{ntem.nombre}}, descargar serie {{serie.nombre}} {{ntem.nombre}} por nuestros servidores Google Drive, Mega">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.megaflypeliculas.ga/{{nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
+<link rel="canonical" href="https://www.megaflypeliculas.ga/{{serie.nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
 <link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
 <meta name="referrer" content="origin">
 <meta name="google" content="translate">
 <meta name="google" content="sitelinkssearchbox">
-<link rel="dns-prefetch" href="https://megaflypeliculas.ga/{{nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
+<link rel="dns-prefetch" href="https://megaflypeliculas.ga/{{serie.nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
 <meta property="fb:app_id" content="154149275933711">
-<meta property=”og:title” content="Ver {{nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
+<meta property=”og:title” content="Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
 <meta property=”og:type” content="website">
-<meta property="og:url" content="https://www.megaflypeliculas.ga/{{nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
+<meta property="og:url" content="https://www.megaflypeliculas.ga/{{serie.nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
 <meta property="og:image" content="{{pelicula.img1.url}}">
 <meta property="og:site_name" content="Megafly Peliculas" >
 <meta property="og:locale" content="es-PE" >
-<meta property="og:description" content="{{nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta property="og:description" content="{{serie.nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
 <meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:site" content="@megafly">
 <meta name="twitter:creator" content="@Megafly">
-<meta name="twitter:title" content="Ver {{nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
-<meta name="twitter:url" content="https://www.megaflypeliculas.ga/{{nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
-<meta name="twitter:description" content="{{nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta name="twitter:title" content="Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
+<meta name="twitter:url" content="https://www.megaflypeliculas.ga/{{serie.nombre}}/{{ntem.slug_ntemporada}}/{{tem.slug_temporada}}">
+<meta name="twitter:description" content="{{serie.nombre}} {{ntem.nombre}} Online gratis todos los capitulos a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
 <meta name="twitter:image" content="{{pelicula.img1.url}}">
-<meta name="twitter:image:alt" content="Ver {{nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
+<meta name="twitter:image:alt" content="Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
 <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
 <link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
 <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {%endfor%} {%endfor%} {% endblock head %} {% block contenido %}
@@ -118,7 +118,7 @@
             </div>
             <div class="right_body">
                 <div class="descripcion">
-                    <h1>{{tem.ntemporada.nombre}} de {{nombre }} {{tem.nombre}}</h1>
+                    <h1>{{tem.nombre}}</h1>
                     <h2>Nombre Original:  <strong> {{tem.nombre_original}}</strong></h2>
                     <p>{{tem.descripcion}}</p>
                     <div class="descripcion-col-main">
@@ -137,7 +137,7 @@
                     <div class="temporadas_g"> 
                         <div class="card_temporada">
                             {%for temp in temporada_serie%}
-                                <a href="{% url 'verserie' slug=temp.slug_capitulo nombre=nombre capitulo=temp.ncapitulo.id %}"><h2>Capitulo {{temp.ncapitulo.id}} de {{nombre}} "{{temp.nombre}}"</h2></a>
+                                <a href="{% url 'verserie' slug=temp.slug_capitulo nombre=nombre capitulo=temp.ncapitulo.id %}"><h2>Capitulo {{temp.ncapitulo.id}} de {{serie.nombre}} "{{temp.nombre}}"</h2></a>
                             {%endfor%}
                         </div>
                     </div>
