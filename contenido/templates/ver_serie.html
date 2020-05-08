@@ -95,7 +95,7 @@
             <div class="left_body">
                 <div class="left_body_responsive">
                     <h1>{{verserie.nombre}}</h1>
-                    <img src="{{verserie.img1.url}}" alt="{{verserie.nombre}}">
+                    <img src="{{verserie.temporada.serie.img1.url}}" alt="{{verserie.nombre}}">
                 </div>
                 <div>
                     <h5>Comparte:</h5>
@@ -110,7 +110,7 @@
                 <div class="recomendacion_body">
                     <p>Peliculas Recomendadas por Megafly</p>
                     <div class="card_recomendadas">
-                        <a href="{%url 'verserie' slug=verserie.slug_capitulo nombre=nombre capitulo=capitulo%}"><img src="{{verserie.img1.url}}" alt="{{verserie.nombre}}"></a>
+                        <a href="{%url 'verserie' slug=verserie.slug_capitulo nombre=nombre capitulo=capitulo%}"><img src="{{verserie.temporada.serie.img1.url}}" alt="{{verserie.nombre}}"></a>
                         <a href="{%url 'verserie' slug=verserie.slug_capitulo nombre=nombre capitulo=capitulo%}"><h2>{{verserie.nombre}}</h2></a>
                     </div>
                      
@@ -141,7 +141,7 @@
                         <div class="video_d"></div>
                     </div>
                 </div>
-                <div class="trailer_body">
+                <!--<div class="trailer_body">
                     <h1>Trailer del {{verserie.ncapitulo.nombre}} de {{nombre}} {{verserie.nombre}}</h1>
                     <iframe src="https://www.youtube.com/embed/{{verserie.temporada.trailer}}"  allowfullscreen></iframe>
                 </div>
@@ -150,7 +150,7 @@
                     <img src="{{verserie.temporada.serie.img2.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
                     <img src="{{verserie.temporada.serie.img3.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
                     <img src="{{verserie.temporada.serie.img4.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
-                </div>
+                </div>-->
                 <div class="descargar_body">
                 <a href="{{verserie.enlace_publi}}" target="_blank">descargar google Drive</a>
                 </div>
