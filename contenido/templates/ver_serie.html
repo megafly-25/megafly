@@ -118,7 +118,7 @@
             </div>
             <div class="right_body">
                 <div class="descripcion">
-                    <h1>Capitulo {{capitulo}} de {{nombre}} {{verserie.nombre}}</h1>
+                    <h1>Capitulo {{capitulo}} de {{verserie.temporada.serie.nombre}} {{verserie.nombre}}</h1>
                     <h2>Nombre Original:  <strong> {{verseries.nombre_original}}</strong></h2>
                     <p>{{verserie.descripcion}}</p>
                     <div class="descripcion-col-main">
@@ -135,18 +135,18 @@
                     </div>
                 </div>
                 <div class="videos_body">
-                    <h1>Ver {{verserie.ncapitulo.nombre}} de {{nombre}} {{verserie.nombre}} </h1>
+                    <h1>Ver {{verserie.ncapitulo.nombre}} de {{verserie.temporada.serie.nombre}} {{verserie.nombre}} </h1>
                     <div class="video_g"> 
                         <iframe src="https://drive.google.com/file/d/{{verserie.online}}/preview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" seamless></iframe>
                         <div class="video_d"></div>
                     </div>
                 </div>
                 <!--<div class="trailer_body">
-                    <h1>Trailer del {{verserie.ncapitulo.nombre}} de {{nombre}} {{verserie.nombre}}</h1>
+                    <h1>Trailer del {{verserie.ncapitulo.nombre}} de {{verserie.temporada.serie.nombre}} {{verserie.nombre}}</h1>
                     <iframe src="https://www.youtube.com/embed/{{verserie.temporada.trailer}}"  allowfullscreen></iframe>
                 </div>
                 <div class="capturas_body">
-                    <h1>Capturas del {{verserie.ncapitulo.nombre}} de {{nombre}} {{verserie.nombre}}</h1>
+                    <h1>Capturas del {{verserie.ncapitulo.nombre}} de {{verserie.temporada.serie.nombre}} {{verserie.nombre}}</h1>
                     <img src="{{verserie.temporada.serie.img2.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
                     <img src="{{verserie.temporada.serie.img3.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
                     <img src="{{verserie.temporada.serie.img4.url}}" alt="{{capitulo}} Capitulo de {{nombre}} {{verserie.nombre}}">
