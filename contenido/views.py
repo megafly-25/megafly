@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import peliculas,categorias
+from .models import series,peliculas,categorias,temporadas,categorias,ntemporada,capitulos
 from django.views.defaults import page_not_found
 from random import randint
 # Create your views here.
@@ -23,9 +23,11 @@ def principal(request):
     recomend_film4=peliculas.objects.filter(id=8)
     recomend_film5=peliculas.objects.filter(id=9)
     recomend_film6=peliculas.objects.filter(id=3)
+    serie=series.objects.all()
     #all_data=[]
     pelicula=peliculas.objects.all()
-    categorias_slug=categorias.objects.values_list('slug_categoria',flat=True).distinct().order_by('nombre')
+    #categorias_slug=categorias.objects.values_list('slug_categoria',flat=True).distinct().order_by('nombre')
+    
     #for categoria in categorias_slug:
     #    current_data={}
     #    current_fil=[]
@@ -49,6 +51,7 @@ def principal(request):
         'recomend_film4':recomend_film4,
         'recomend_film5':recomend_film5,
         'recomend_film6':recomend_film6,
+        'serie':serie,
     }
     return render(request,"principal.html",data)
 
@@ -81,36 +84,48 @@ def pelicula(request,slug):
       
     }
     return render(request,"pelicula.html",data)
-def series(request,slug):
-    pelicula=get_object_or_404(peliculas,slug_peliculas=slug)
-    count=peliculas.objects.count()
-    recomendacion1=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion2=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion3=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion4=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion5=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion6=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion7=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion8=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion9=peliculas.objects.all()[randint(0,count-1)]
-    recomendacion10=peliculas.objects.all()[randint(0,count-1)]
+def serie(request,slug):
+    serie=get_object_or_404(series,slug_serie=slug)
+    temporada=temporadas.objects.filter(serie=serie.id)
+    ntemporadas=ntemporada.objects.all()
+    count=series.objects.count()
+    recomendacion1=series.objects.all()[randint(0,count-1)]
     data={
         'pelicula':pelicula,
         'recomendacion1':recomendacion1,
-        'recomendacion2':recomendacion2,
-        'recomendacion3':recomendacion3,
-        'recomendacion4':recomendacion4,
-        'recomendacion5':recomendacion5,
-        'recomendacion6':recomendacion6,
-        'recomendacion7':recomendacion7,
-        'recomendacion8':recomendacion8,
-        'recomendacion9':recomendacion9,
-        'recomendacion10':recomendacion10,
-
-      
+        'serie':serie,
+        'temporada':temporada,
+        'ntemporadas':ntemporadas,
     }
     return render(request,"series.html",data)
-
+def temporada_serie(request,slug,nombre,temporada_slug):
+    #temporada_serie=get_object_or_404(capitulos,temporada__slug_temporada=slug)
+    temporada_serie=capitulos.objects.filter(temporada__slug_temporada=slug)
+    ntemporadas=ntemporada.objects.filter(slug_ntemporada=temporada_slug)
+    temporada=temporadas.objects.filter(slug_temporada=slug)
+    count=series.objects.count()
+    recomendacion1=peliculas.objects.all()[randint(0,count-1)]
+    data={
+        'pelicula':pelicula,
+        'recomendacion1':recomendacion1,
+        'nombre':nombre,
+        'temporada_slug':temporada_slug,
+        'temporada_serie':temporada_serie,
+        'ntemporada':ntemporadas,
+        'temporada':temporada,
+    }
+    return render(request,"temporadas_serie.html",data)
+def verserie(request,slug,nombre,capitulo):
+    verseries=capitulos.objects.filter(slug_capitulo=slug)
+    count=peliculas.objects.count()
+    recomendacion1=peliculas.objects.all()[randint(0,count-1)]
+    data={
+        'recomendacion1':recomendacion1, 
+        'verseries':verseries,
+        'nombre':nombre,
+        'capitulo':capitulo,
+    }
+    return render(request,"ver_serie.html",data)
 def pelicula_genero(request,slug):
     pelicula=peliculas.objects.filter(genero__slug_categoria=slug)
     categoria_genero=categorias.objects.get_queryset().order_by('nombre')

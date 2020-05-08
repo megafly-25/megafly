@@ -5,9 +5,9 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": "ver peliculas online gratis",
+    "name": "ver Series online gratis",
     "author": "Megafly",
-    "url": "https://www.megaflypeliculas.ga/peliculas/{{pelicula.slug_peliculas}}",
+    "url": "https://www.megaflypeliculas.ga/serie/{{serie.slug_serie}}",
     "address": "Peru",
     "sameAs": [
       "https://www.facebook.com/groups/154149275933711/"
@@ -48,50 +48,50 @@
 {% endblock googleanalytics%}
 <script data-ad-client="ca-pub-7691100873282163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <title>
-    Ver {{pelicula.nombre}} Online gratis completo en GoogleDrive | Megafly
+    Ver serie {{serie.nombre}} {{serie.anio}} Online gratis en GoogleDrive - Megafly
 </title>
-<meta name="description" content="{{pelicula.nombre}} Online gratis completo a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta name="description" content="Ver {{serie.nombre}} {{serie.anio}} Online gratis completo todas las temporadas a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-<meta name="keywords" content="Ver Pelicula {{pelicula.nombre}}, ver pelicula Online {{pelicula.nombre}}, ver pelicula {{pelicula.nombre}} a la mejora calidad, descarga pelicula {{pelicula.nombre}}, descargar pelicula {{pelicula.nombre}} por nuestros servidores Google Drive, Mega">
+<meta name="keywords" content="Ver Series {{serie.nombre}}, ver Series Online {{serie.nombre}}, ver Series {{serie.nombre}} a la mejora calidad, descarga Series {{serie.nombre}}, descargar pelicula {{Series.nombre}} por nuestros servidores Google Drive, Mega">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.megaflypeliculas.ga/peliculas/{{pelicula.nombre}}">
+<link rel="canonical" href="https://www.megaflypeliculas.ga/serie/{{serie.slug_serie}}">
 <link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
 <meta name="referrer" content="origin">
 <meta name="google" content="translate">
 <meta name="google" content="sitelinkssearchbox">
-<link rel="dns-prefetch" href="https://megaflypeliculas.ga/peliculas/{{pelicula.slug_peliculas}}">
+<link rel="dns-prefetch" href="https://megaflypeliculas.ga/serie/{{serie.slug_serie}}">
 <meta property="fb:app_id" content="154149275933711">
-<meta property=”og:title” content="Ver {{pelicula.nombre}} Online gratis completo en GoogleDrive | Megafly">
+<meta property=”og:title” content="Ver {{serie.nombre}} {{serie.anio}} Online gratis Todas las temporadas en GoogleDrive - Megafly">
 <meta property=”og:type” content="website">
-<meta property="og:url" content="https://www.megaflypeliculas.ga/peliculas/{{pelicula.slug_peliculas}}">
-<meta property="og:image" content="{{pelicula.img1.url}}">
+<meta property="og:url" content="https://www.megaflypeliculas.ga/serie/{{serie.slug_serie}}">
+<meta property="og:image" content="{{serie.img1.url}}">
 <meta property="og:site_name" content="Megafly Peliculas" >
 <meta property="og:locale" content="es-PE" >
-<meta property="og:description" content="{{pelicula.nombre}} Online gratis completo a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta property="og:description" content="Ver {{serie.nombre}} {{serie.anio}} Online gratis completo todas las temporadas a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
 <meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:site" content="@megafly">
 <meta name="twitter:creator" content="@Megafly">
-<meta name="twitter:title" content="Ver {{pelicula.nombre}} Online gratis completo en GoogleDrive | Megafly">
-<meta name="twitter:url" content="https://www.megaflypeliculas.ga/peliculas/{{pelicula.slug_peliculas}}">
-<meta name="twitter:description" content="{{pelicula.nombre}} Online gratis completo a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
-<meta name="twitter:image" content="{{pelicula.img1.url}}">
-<meta name="twitter:image:alt" content="Ver {{pelicula.nombre}} Online gratis, para descargar por nuestros servidores google drive y mega">
+<meta name="twitter:title" content="Ver {{serie.nombre}} {{serie.anio}} Online gratis Todas las temporadas en GoogleDrive | Megafly">
+<meta name="twitter:url" content="https://www.megaflypeliculas.ga/serie/{{serie.slug_serie}}">
+<meta name="twitter:description" content="Ver {{serie.nombre}} {{serie.anio}} Online gratis completo todas las temporadas a la mejora calidad y descargar por nuestros servidores Google Drive y Mega | megafly">
+<meta name="twitter:image" content="{{serie.img1.url}}">
+<meta name="twitter:image:alt" content="Ver {{serie.nombre}} Online gratis Todas las temporadas en GoogleDrive | Megafly">
 <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
 <link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
 <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {% endblock head %} {% block contenido %}
 <main class="contenido">
     <div class="card">
         <div class="card_header">
-            <a href="{% url 'principal'%}"><img src="{% static 'imagenes/izquierda-megafly.ico' %}"> </a>
+            <a href="{% url 'principal' %}"><img src="{% static 'imagenes/izquierda-megafly.ico' %}"> </a>
         </div>
         <div class="card_body">
             <div class="left_body">
                 <div class="left_body_responsive">
-                    <h1>{{pelicula.nombre}}</h1>
-                    <img src="{{pelicula.img1.url}}" alt="">
+                    <h1>{{serie.nombre}}</h1>
+                    <img src="{{serie.img1.url}}" alt="{{serie.nombre}}">
                 </div>
                 <div>
                     <h5>Comparte:</h5>
@@ -104,139 +104,67 @@
                     </div>
                 </div>
                 <div class="recomendacion_body">
-                    <p>Peliculas Recomendadas por Megafly</p>
+                    <p>Series Recomendadas por Megafly</p>
                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion1.slug_peliculas%}"><img src="{{recomendacion1.img1.url}}" alt="{{recomendacion1.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion1.slug_peliculas%}"><h2>{{recomendacion1.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion2.slug_peliculas%}"><img src="{{recomendacion2.img1.url}}" alt="{{recomendacion2.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion2.slug_peliculas%}"><h2>{{recomendacion2.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion3.slug_peliculas%}"><img src="{{recomendacion3.img1.url}}" alt="{{recomendacion3.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion3.slug_peliculas%}"><h2>{{recomendacion3.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion4.slug_peliculas%}"><img src="{{recomendacion4.img1.url}}" alt="{{recomendacion4.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion4.slug_peliculas%}"><h2>{{recomendacion4.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion5.slug_peliculas%}"><img src="{{recomendacion5.img1.url}}" alt="{{recomendacion5.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion5.slug_peliculas%}"><h2>{{recomendacion5.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion6.slug_peliculas%}"><img src="{{recomendacion6.img1.url}}" alt="{{recomendacion6.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion6.slug_peliculas%}"><h2>{{recomendacion6.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion7.slug_peliculas%}"><img src="{{recomendacion7.img1.url}}" alt="{{recomendacion7.nombre}}"></a>
-                       <a href="{%url 'pelicula' slug=recomendacion7.slug_peliculas%}"> <h2>{{recomendacion7.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion8.slug_peliculas%}"><img src="{{recomendacion8.img1.url}}" alt="{{recomendacion8.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion8.slug_peliculas%}"><h2>{{recomendacion8.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion9.slug_peliculas%}"><img src="{{recomendacion9.img1.url}}" alt="{{recomendacion9.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion9.slug_peliculas%}"><h2>{{recomendacion9.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion10.slug_peliculas%}"><img src="{{recomendacion10.img1.url}}" alt="{{recomendacion10.nombre}}"></a>
-                       <a href="{%url 'pelicula' slug=recomendacion10.slug_peliculas%}"> <h2>{{recomendacion10.nombre}}</h2></a>
+                        <a href="{%url 'serie' slug=serie.slug_serie%}"><img src="{{serie.img1.url}}" alt="{{serie.nombre}}"></a>
+                        <a href="{%url 'serie' slug=serie.slug_serie%}"><h2>{{serie.nombre}}</h2></a>
                     </div>
                 </div>
             </div>
             <div class="right_body">
                 <div class="descripcion">
-                    <h1>{{pelicula.nombre}}</h1>
-                    <h2>Nombre Original:  <strong> {{pelicula.nombre_original}}</strong></h2>
-                    <p>{{pelicula.descripcion}}</p>
+                    <h1>{{serie.nombre}}</h1>
+                    <h2>Nombre Original:  <strong> {{serie.nombre_original}}</strong></h2>
+                    <p>{{serie.descripcion}}</p>
                     <div class="descripcion-col-main">
                         <div class="descripcion-col-1">
-                            <p><strong>Descargas:</strong> 12</p>
-                            <p><strong>Calificacion:</strong> 5 estrellas</p>
-                            <p><strong>Region:</strong> {{pelicula.region}}</p>
+                            <p><strong>Descargas:</strong>{{serie.descargas}}</p>
+                            <p><strong>Calificacion:</strong>{{serie.calificacion}} Estrellas</p>
+                            <p><strong>Region:</strong> {{serie.region}}</p>
                         </div>
                         <div class="descripcion-col-2">
-                            <p><strong>Fecha de Estreno:</strong> {{pelicula.fecha_estreno}}</p>
-                            <p><strong>Peso de Pelicula:</strong> {{pelicula.disco}}</p>
-                            <p><strong>Idiomas:</strong> {{pelicula.idiomas}}</p>
+                            <p><strong>Fecha de Estreno:</strong> {{serie.fecha_estreno}}</p>
+                            <p><strong>Estado de la Serie:</strong> {{serie.estado}}</p>
+                            <p><strong>Idiomas:</strong> {{serie.idiomas}}</p>
                         </div>
                     </div>
-                    <p><strong>Director:</strong> {{pelicula.director}}</p>
-                    <p><strong>Reparto: </strong> {{pelicula.reparto}}</p>
-                    <p><strong>Generos: </strong>{{pelicula.genero.all|join:', '|title}}</p>
+                    <p><strong>Director:</strong> {{serie.director}}</p>
+                    <p><strong>Reparto: </strong> {{serie.reparto}}</p>
+                    <p><strong>Generos: </strong>{{serie.genero.all|join:', '|title}}</p>
                 </div>
                 <div class="videos_body">
-                    <h1>Temporadas de {{pelicula.nombre}} </h1>
+                    <h1>Temporadas de {{serie.nombre}} </h1>
                     <div class="temporadas_g"> 
-                        <iframe src="https://drive.google.com/file/d/{{pelicula.online}}/preview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" seamless></iframe>
-                        <div class="video_d"></div>
+                        <div class="card_temporada">
+                            {%for temp in temporada%}
+                                <a href="{% url 'temporada_serie' slug=temp.slug_temporada nombre=serie.nombre temporada_slug=temp.ntemporada.slug_ntemporada%}"><h2>{{temp.ntemporada.nombre}} de {{serie.nombre}} "{{temp.nombre}}"</h2></a>
+                            {%endfor%}
+                        </div>
                     </div>
                 </div>
                 <div class="trailer_body">
-                    <h1>Trailer {{pelicula.nombre}}</h1>
-                    <iframe src="https://www.youtube.com/embed/{{pelicula.trailer}}"  allowfullscreen></iframe>
+                    <h1>Trailer de {{serie.nombre}}</h1>
+                    <iframe src="https://www.youtube.com/embed/{{serie.trailer}}"  allowfullscreen></iframe>
                 </div>
                 <div class="capturas_body">
-                    <h1>Capturas {{pelicula.nombre}}</h1>
-                    <img src="{{pelicula.img2.url}}" alt="">
-                    <img src="{{pelicula.img3.url}}" alt="">
-                    <img src="{{pelicula.img4.url}}" alt="">
-                </div>
-                <div class="descargar_body">
-                <a href="{{pelicula.enlace_publi}}" target="_blank">descargar google Drive</a>
+                    <h1>Capturas de {{serie.nombre}}</h1>
+                    <img src="{{pelicula.img2.url}}" alt="{{serie.nombre}}">
+                    <img src="{{pelicula.img3.url}}" alt="{{serie.nombre_original}}">
+                    <img src="{{pelicula.img4.url}}" alt="{{serie.nombre}}">
                 </div>
                 <div class="tags_body">
                 <p><strong>Servidores: </strong>Google Drive, Mega</p>
-                <p><strong>Etiquetas: </strong>{{pelicula.nombre}}, Peliculas Google Drive, Peliculas Gratis, Peliculas Online, Peliculas Completas </p>
+                <p><strong>Etiquetas: </strong>{{serie.nombre}}, serie {{serie.nombre}} Series por Google Drive, Series Gratis, Series Online, Series Completas, Series de Netflix,Series, Todos los capitulos, Peliculas Google Drive, Peliculas Gratis, Peliculas Online, Peliculas Completas, Primera Temporada, Segunda Temporada, Tercera Temporada, Cuarta Temporada, Quinta Temporada, Sexta Temporada, Juegos Pc, Juegos PSX, Juegos PS2, Juegos PS3, Descargar juegos, Descargar Juegos Gratis, Descargar juegos por Mega, Descargar Juegos de Pocos Requisitos, Descargar Juegos de Medios Requisitos, Descargar Juegos de Altos Requisitos </p>
                 </div>
             </div>
         </div>
     </div>
 </main>
 <div class="recomendacion-responsive">
-<p>Peliculas Recomendadas por Megafly</p>
+<p>Series Recomendadas por Megafly</p>
                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion1.slug_peliculas%}"><img src="{{recomendacion1.img1.url}}" alt="{{recomendacion1.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion1.slug_peliculas%}"><h2>{{recomendacion1.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion2.slug_peliculas%}"><img src="{{recomendacion2.img1.url}}" alt="{{recomendacion2.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion2.slug_peliculas%}"><h2>{{recomendacion2.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion3.slug_peliculas%}"><img src="{{recomendacion3.img1.url}}" alt="{{recomendacion3.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion3.slug_peliculas%}"><h2>{{recomendacion3.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion4.slug_peliculas%}"><img src="{{recomendacion4.img1.url}}" alt="{{recomendacion4.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion4.slug_peliculas%}"><h2>{{recomendacion4.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion5.slug_peliculas%}"><img src="{{recomendacion5.img1.url}}" alt="{{recomendacion5.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion5.slug_peliculas%}"><h2>{{recomendacion5.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion6.slug_peliculas%}"><img src="{{recomendacion6.img1.url}}" alt="{{recomendacion6.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion6.slug_peliculas%}"><h2>{{recomendacion6.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion7.slug_peliculas%}"><img src="{{recomendacion7.img1.url}}" alt="{{recomendacion7.nombre}}"></a>
-                       <a href="{%url 'pelicula' slug=recomendacion7.slug_peliculas%}"> <h2>{{recomendacion7.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion8.slug_peliculas%}"><img src="{{recomendacion8.img1.url}}" alt="{{recomendacion8.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion8.slug_peliculas%}"><h2>{{recomendacion8.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion9.slug_peliculas%}"><img src="{{recomendacion9.img1.url}}" alt="{{recomendacion9.nombre}}"></a>
-                        <a href="{%url 'pelicula' slug=recomendacion9.slug_peliculas%}"><h2>{{recomendacion9.nombre}}</h2></a>
-                    </div>
-                     <div class="card_recomendadas">
-                        <a href="{%url 'pelicula' slug=recomendacion10.slug_peliculas%}"><img src="{{recomendacion10.img1.url}}" alt="{{recomendacion10.nombre}}"></a>
-                       <a href="{%url 'pelicula' slug=recomendacion10.slug_peliculas%}"> <h2>{{recomendacion10.nombre}}</h2></a>
+                        <a href="{%url 'serie' slug=serie.slug_serie%}"><img src="{{serie.img1.url}}" alt="{{serie.nombre}}"></a>
+                        <a href="{%url 'serie' slug=serie.slug_serie%}"><h2>{{serie.nombre}}</h2></a>
                     </div>
 </div>
 {% endblock contenido %}

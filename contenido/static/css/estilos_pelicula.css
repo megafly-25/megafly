@@ -183,6 +183,26 @@
                     position: relative;
                 }
                 
+                .contenedor .card .card_body .right_body .videos_body .temporada_g {}
+                
+                .contenedor .card .card_body .right_body .videos_body .temporadas_g .card_temporada {}
+                
+                .contenedor .card .card_body .right_body .videos_body .temporadas_g .card_temporada a h2 {
+                    background: #191919;
+                    margin: 5px 0;
+                    padding: 1em 2em;
+                    border-radius: 5px;
+                    transform: all 0.5s ease;
+                }
+                
+                .contenedor .card .card_body .right_body .videos_body .temporadas_g .card_temporada a h2 {
+                    color: #fff;
+                }
+                
+                .contenedor .card .card_body .right_body .videos_body .temporadas_g .card_temporada a h2:hover {
+                    opacity: 0.9;
+                }
+                
                 .contenedor .card .card_body .right_body .videos_body .video_g .video_d {
                     width: 80px;
                     height: 80px;
