@@ -351,7 +351,7 @@ class capitulos(models.Model):
     nombre=models.CharField(max_length=250,verbose_name="Nombre:")
     nombre_original=models.CharField(max_length=250,verbose_name="Nombre Original:")
     slug_capitulo=models.SlugField(max_length=250,null=True,blank=True)
-    descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
+    descripcion=models.CharField(max_length=1500,verbose_name="Descripcion:")
     Author=models.CharField(max_length=150)
     calificacion=models.CharField(max_length=100)
     descargas=models.IntegerField()
