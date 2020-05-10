@@ -2,6 +2,7 @@
 {% load static %}
 {%block schema%}
 {%for temp in temporada%}
+{%for serie in all_series%}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -15,6 +16,7 @@
     ]
   }
 </script>
+{%endfor%}
 {%endfor%}
 {%endblock schema%}
 {% block facebook_pixel %}
@@ -51,6 +53,7 @@
 <script data-ad-client="ca-pub-7691100873282163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {%for ntem in ntemporada%}
 {%for tem in temporada%}
+{%for serie in all_series%}
 <title>
     Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly
 </title>
@@ -85,7 +88,7 @@
 <meta name="twitter:image:alt" content="Ver {{serie.nombre}} {{ntem.nombre}} Online gratis completo en GoogleDrive | Megafly">
 <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
 <link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
-<link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {%endfor%} {%endfor%} {% endblock head %} {% block contenido %}
+<link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {%endfor%} {%endfor%} {%endfor%} {% endblock head %} {% block contenido %}
 <main class="contenido">
 {%for tem in temporada%}
     <div class="card">
