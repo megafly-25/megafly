@@ -327,8 +327,8 @@
                     </div>
                 </div>
         </div>
-        {% block script %}
+{% endblock contenido %}
+{% block script %}
         <script src="{% static 'js/swiper.min.js'%}"></script>
         <script src="{% static 'js/slider-megafly.js'%}"></script>
-        {% endblock script %}
-{% endblock contenido %}
+{% endblock script %}
