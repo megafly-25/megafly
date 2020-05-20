@@ -171,7 +171,7 @@
             <div class="ultimos-agregados">
                {% for la_fi_add in last_serie_add%}
                         <div class="card">
-                            <a href=""><img src="{{la_fi_add.img1.url}}" alt="{{la_fi_add.nombre_original}}">
+                            <a href="{%url 'serie' slug=la_fi_add.slug_serie%}"><img src="{{la_fi_add.img1.url}}" alt="{{la_fi_add.nombre_original}}">
                                 <h3>{{la_fi_add.nombre}}</h3>
                             </a>
                         </div>
@@ -184,7 +184,7 @@
             <div class="ultimos-agregados">
                 {% for la_fi_add in last_film_add%}
                         <div class="card">
-                            <a href=""><img src="{{la_fi_add.img1.url}}" alt="{{la_fi_add.nombre_original}}">
+                            <a href="{%url 'pelicula' slug=la_fi_add.slug_peliculas%}"><img src="{{la_fi_add.img1.url}}" alt="{{la_fi_add.nombre_original}}">
                                 <h3>{{la_fi_add.nombre}}</h3>
                             </a>
                         </div>
