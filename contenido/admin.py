@@ -27,27 +27,27 @@ class Gamesps3Admin(admin.ModelAdmin):
     search_fields=['nombre','nombre_original','descripcion','anio','fecha_subida','disco']
     list_filter=['genero']
 class SeriesAdmin(admin.ModelAdmin):
-    list_display=['nombre','fecha_estreno','online','disco']
+    list_display=['nombre','nombre_original','fecha_estreno']
     search_fields=['nombre','nombre_original','descripcion','region','anio','fecha_subida','director','reparto','online']
     list_filter=['genero']
 class TemporadasAdmin(admin.ModelAdmin):
-    list_display=['nombre','ntemporada','serie','disco']
+    list_display=['nombre','ntemporada','serie']
     search_fields=['nombre','nombre_original','descripcion','anio','fecha_subida','ntemporada','online']
     list_filter=['serie']
 class CapitulosAdmin(admin.ModelAdmin):
-    list_display=['nombre','ncapitulo','temporada','temporada.serie']
-    search_fields=['nombre','ncapitulo','nombre_original','descripcion','anio','fecha_subida','temporada','temporada.serie','online']
+    list_display=['nombre','ncapitulo','temporada']
+    search_fields=['nombre','ncapitulo','nombre_original','descripcion','anio','fecha_subida','temporada','temporada','online']
     list_filter=['temporada']
 admin.site.register(categorias,CategoriaAdmin)
-admin.site.register(gamespc)
-admin.site.register(gamespsx)
-admin.site.register(gamesps2)
-admin.site.register(gamesps3)
+admin.site.register(gamespc,GamespcAdmin)
+admin.site.register(gamespsx,GamespsxAdmin)
+admin.site.register(gamesps2,Gamesps3Admin)
+admin.site.register(gamesps3,Gamesps3Admin)
 admin.site.register(peliculas,PeliculaAdmin)
-admin.site.register(series)
-admin.site.register(temporadas)
+admin.site.register(series,SeriesAdmin)
+admin.site.register(temporadas,TemporadasAdmin)
 admin.site.register(ntemporada)
-admin.site.register(capitulos)
+admin.site.register(capitulos,CapitulosAdmin)
 admin.site.register(ncapitulos)
 admin.site.site_header="Megafly Admin"
 admin.site.index_title="Megafly Admin"
