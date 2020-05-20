@@ -1,0 +1,235 @@
+{% extends "main.html" %}
+{% load static %}
+{%block schema%}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "ver peliculas por Genero online gratis",
+    "author": "Megafly",
+    "url": "https://www.megaflypeliculas.ga",
+    "address": "Peru",
+    "sameAs": [
+      "https://www.facebook.com/groups/154149275933711/"
+    ]
+  }
+</script>
+{%endblock schema%}
+
+{% block facebook_pixel %}
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '552731338706557');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=552731338706557&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+{% endblock facebook_pixel %}
+{% block head %}
+{% block googleanalytics%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163130682-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163130682-1');
+</script>
+{% endblock googleanalytics%}
+    <script data-ad-client="ca-pub-7691100873282163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <title>Peliculas de {{genero}} gratis online en Google Drive, Mega | Megafly</title>
+    <meta name="description" content="Descarga peliculas de {{genero}} online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="keywords" content="Descargar juegos, descargar juegos para android, descargar juegos para pc, descargar juegos para psx, descargar juegos para ps2, descargar juegos para ps3, descargar peliculas por google drive, descargar peliculas por mega, ver peliculas online, ver peliculas de {{genero}}, descargar peliculas de {{genero}}">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.megaflypeliculas.ga/peliculas/de/{{genero}}">
+    <link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
+    <meta name="referrer" content="origin">
+    <meta name="google" content="translate">
+    <meta name="google" content="sitelinkssearchbox">
+    <link rel="dns-prefetch" href="https://megaflypeliculas.ga/peliculas/de/{{genero}}">
+    <meta property="fb:app_id" content="154149275933711">
+    <meta property=”og:title” content="Peliculas de {{genero}} gratis online en GoogleDrive, Mega | Megafly">
+    <meta property=”og:type” content="website">
+    <meta property="og:url" content="https://www.megaflypeliculas.ga/peliculas/de/{{genero}}">
+    <meta property="og:image" content="{% static 'imagenes/facebook-megafly-og.png' %}">
+    <meta property="og:site_name" content="megaflypeliculas" >
+    <meta property="og:locale" content="es-PE" >
+    <meta property="og:description" content="Descarga peliculas de {{genero}} online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta name="twitter:card" value="summary_large_image">
+    <meta name="twitter:site" content="@megafly">
+    <meta name="twitter:creator" content="@Megafly">
+    <meta name="twitter:title" content="Peliculas de {{genero}} gratis online en GoogleDrive, Mega | Megafly">
+    <meta name="twitter:description" content="Descarga peliculas de {{genero}} online gratis para celular android, pc, psx, ps2, ps3 a la mejor calidad con Google Drive, Mega en español latino, subtitulado e ingles - Megaflypeliculas">
+    <meta name="twitter:url" content="https://www.megaflypeliculas.ga/peliculas/de/{{genero}}">
+    <meta name="twitter:image" content="{% static 'imagenes/facebook-megafly-og.png'%}">
+    <meta name="twitter:image:alt" content="megafly ofrecemos una variedad de peliculas online gratis, para descargar por nuestros servidores google drive y mega">
+    <link href="{% static 'css/swiper.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css'%}" rel="stylesheet">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400">
+{% endblock head %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+{% block contenido %}
+{% include "superior/descripcion.html"%}
+        
+        <main class="contenido">
+            <h1>Catalogo de Juegos y Peliculas gratis online por Megafly en servidores Google drive y Mega</h1>
+            <div class="contenido_resumen">
+                    {% for pelis in peliculas %}
+                        <div class="card">
+                            <a href="{%url 'pelicula' slug=pelis.slug_peliculas %}"><img src="{{pelis.img1.url}}" alt="{{pelis.nombre_original}}">
+                                <h2>{{pelis.nombre}}</h2>
+                                <div class="resumen">
+                                    <h3>{{pelis.nombre}}</h3>
+                                    <p>{{pelis.descripcion}}</p>
+                                    <h6>Calificacion: {{pelis.calificacion}}</h6>
+                                    <h6>Descargas: {{pelis.descargas}}</h6>
+                                </div>
+                            </a>
+                         </div>
+                        {%endfor%}
+                
+            </div>
+           
+        </main>
+        <aside class="sidebar-1">
+            <h3>Busqueda Avanzada</h3>
+            <nav class="menu-sidebar-1">
+                <ul>
+                    <li><a href="">Pocos Requisitos:</a></li>
+                    <div class="menu-sidebar-1-cards">
+                    {% for po_re in pocos_requisitos%}
+                        <div class="card">
+                            <a href="{% url 'pelicula' slug=po_re.slug_peliculas %}"><img src="{{po_re.img1.url}}" alt="{{po_re.nombre_original}}">
+                                <h3>{{po_re.nombre}}</h3>
+                            </a>
+                        </div>
+                    {%endfor%}                      
+                    </div>
+                    <li><a href="">Medios Requisitos:</a></li>
+                    <div class="menu-sidebar-1-cards">
+                        {% for me_re in medios_requisitos%}
+                            <div class="card">
+                                <a href="{% url 'pelicula' slug=me_re.slug_peliculas %}"><img src="{{me_re.img1.url}}" alt="{{me_re.nombre_original}}">
+                                    <h3>{{me_re.nombre}}</h3>
+                                </a>
+                            </div>
+                        {%endfor%}
+                    </div>
+                    <li><a href="">Altos Requisitos :</a></li>
+                    <div class="menu-sidebar-1-cards">
+                        {% for al_re in altos_requisitos%}
+                        <div class="card">
+                            <a href="{% url 'pelicula' slug=al_re.slug_peliculas %}"><img src="{{al_re.img1.url}}" alt="{{al_re.nombre_original}}">
+                                <h3>{{al_re.nombre}}</h3>
+                            </a>
+                        </div>
+                        {%endfor%}
+                    </div>
+
+                </ul>
+            </nav>
+            <div class="recomendacion-genero">
+                <h2>Ver Peliculas Por Generos En Google Drive</h2>
+                    <ul> 
+                    {%for cat in categoria_genero%}
+                         <a href="{% url 'pelicula_genero' slug=cat.slug_categoria %}"><li>{{cat.nombre}}</li></a>             
+                    {%endfor%}
+                    </ul>
+            </div>
+        </aside>
+        <aside class="sidebar-2">
+            <h2>Peliculas mas Visitados En Google Drive</h2>
+            <div class="sidebar2-main">
+            {% for mas_vi in mas_visitados%}
+                       
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="{% url 'pelicula' slug=mas_vi.slug_peliculas %}"><img src="{{mas_vi.img1.url}}" alt="{{mas_vi.nombre}}"></a>
+                                </div>
+                                <a href=""><h3>{{mas_vi.nombre}}</h3></a>
+                            </div>
+                       
+            {%endfor%}
+            </div> 
+            <h2>Peliculas mas Descargadas En Google Drive</h2>
+            <div class="sidebar2-main">
+                {% for mas_des in mas_descargados%}
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="{% url 'pelicula' slug=mas_des.slug_peliculas %}"><img src="{{mas_des.img1.url}}" alt="{{mas_des.nombre}}"></a>
+                                </div>    
+                                <a href=""><h3>{{mas_des.nombre}}</h3></a>
+                            </div>
+                        
+                {%endfor%}
+            </div>
+            <div class="recomendacion-genero">
+                <h2>Ver Peliculas Por Año En Google Drive</h2>
+                    <ul> 
+                    {%for an_fi in anio_film%}
+                        <a href="{% url 'pelicula_anio' slug=an_fi %}"><li>{{an_fi}}</li></a> 
+                    {%endfor%}            
+                    </ul>
+            </div>
+        </aside>
+        <div class="widget-1">
+            <h2>Ultimos Juegos Agregados a Megafly En Google Drive</h2>
+            <div class="ultimos-agregados">
+                <div class="card">
+                    <a href=""><img src="{% static 'imagenes/jump-force.png'%}" alt="Jump Force">
+                        <h3>Jump Force</h3>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="widget-2">
+            <h2>Ultimas Peliculas Agregadas a Megafly En Google Drive</h2>
+            <div class="ultimos-agregados">
+                {% for la_fi_add in last_film_add%}
+                        <div class="card">
+                            <a href="{% url 'pelicula' slug=la_fi_add.slug_peliculas %}"><img src="{{la_fi_add.img1.url}}" alt="{{la_fi_add.nombre_original}}">
+                                <h3>{{la_fi_add.nombre}}</h3>
+                            </a>
+                        </div>
+                {%endfor%} 
+            </div>
+        </div>
+        <div class="informacion-megafly">
+            <h1>Sobre nosotros Megafly:</h1>
+                <div class="informacion">
+                    <div class="informacion-1">
+                        <p><strong>Megafly</strong> es una pagina web dedicada a otorgarle servicios de entretenimiento como <strong>descargar juegos de celular android, descargar juegos para PC, PS1, PS2 y PS3</strong> por nuestros servidores <strong>Google Drive y Mega</strong></p>
+                        <p><strong>Megafly</strong> tambien otorga servicios de <strong>Peliculas Online Gratis a la mejor calidad y sin publicidad</strong>, tambien puedes <strong>descargar las peliculas en los servidores Google Drive y Mega</strong></p>
+                        <p><strong>No olvide que nosotros a estamos para servirle,</strong> contactenos para reportar enlaces de las peliculas que tienen problemas o para recomendar una pelicula, <strong>Megafly siempre contigo.</strong></p>
+                    </div>
+                    <div class="informacion-2">
+                        <p><strong>Apoyanos con una Donacion para Seguir Trabajando:</strong></p>
+                        <a href="https://paypal.me/megaflypelis?locale.x=es_XC" target="_blank">
+                        <img src="{% static 'imagenes/paypal-megafly.png'%}" alt="pay pal megafly">
+                        </a>
+                         <a href="https://paypal.me/megaflypelis?locale.x=es_XC" class="cta" target="_blank"><button>Donar</button></a>
+                    </div>
+                </div>
+        </div>
+{% endblock contenido %}
+{% block script %}
+        <script src="{% static 'js/swiper.min.js'%}"></script>
+        <script src="{% static 'js/slider-megafly.js'%}"></script>
+{% endblock script %}

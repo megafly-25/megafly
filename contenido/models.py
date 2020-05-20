@@ -32,13 +32,12 @@ class  gamespc(models.Model):
     slug_gamespc=models.SlugField(null=True,blank=True)
     descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
     genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:")
-    region=models.CharField(max_length=150,blank=True,null=True)
     Author=models.CharField(max_length=50)
     calificacion=models.CharField(max_length=100)
     descargas=models.IntegerField()
     idiomas=models.CharField(max_length=50,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
-    fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
     trailer=models.CharField(max_length=100)
     img1=models.ImageField(verbose_name="Subir Imagen 1",blank=True,null=True)
     img2=models.ImageField(verbose_name="Subir Imagen 2",blank=True,null=True)
@@ -60,12 +59,13 @@ class  gamespc(models.Model):
     enlacegd3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 3")
     enlacegd4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 4")
     enlacegd5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 5")
-    enlacemg=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega ")
-    enlacemg2=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 2")
-    enlacemg3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 3")
-    enlacemg4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 4")
-    enlacemg5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 5")
-    comparte=models.CharField(max_length=150)
+    enlacegd6=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 6")
+    enlacegd7=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 7")
+    enlacegd8=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 8")
+    enlacegd9=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 9")
+    enlacegd10=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 10")
+    comparte=models.CharField(max_length=150,null=True,blank=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
     def __str__(self):
             return self.nombre
 def slug_generator_gamespc(sender,instance,*args,**kwargs):
@@ -79,13 +79,12 @@ class  gamespsx(models.Model):
     slug_gamespsx=models.SlugField(null=True,blank=True)
     descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
     genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:")
-    region=models.CharField(max_length=150,blank=True,null=True)
     Author=models.CharField(max_length=50)
     calificacion=models.CharField(max_length=100)
     descargas=models.IntegerField()
     idiomas=models.CharField(max_length=50,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
-    fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
     img1=models.ImageField(verbose_name="Subir Imagen 1",blank=True,null=True)
@@ -98,12 +97,13 @@ class  gamespsx(models.Model):
     enlacegd3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 3")
     enlacegd4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 4")
     enlacegd5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 5")
-    enlacemg=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega ")
-    enlacemg2=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 2")
-    enlacemg3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 3")
-    enlacemg4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 4")
-    enlacemg5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 5")
-    comparte=models.CharField(max_length=150)
+    enlacegd6=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 6")
+    enlacegd7=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 7")
+    enlacegd8=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 8")
+    enlacegd9=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 9")
+    enlacegd10=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 10")
+    comparte=models.CharField(max_length=150,null=True,blank=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
     def __str__(self):
             return self.nombre
 def slug_generator_gamespsx(sender,instance,*args,**kwargs):
@@ -121,7 +121,7 @@ class  gamesps2(models.Model):
     descargas=models.IntegerField()
     idiomas=models.CharField(max_length=50,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
-    fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
     region=models.CharField(max_length=150,blank=True,null=True)
@@ -135,12 +135,13 @@ class  gamesps2(models.Model):
     enlacegd3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 3")
     enlacegd4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 4")
     enlacegd5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 5")
-    enlacemg=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega ")
-    enlacemg2=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 2")
-    enlacemg3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 3")
-    enlacemg4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 4")
-    enlacemg5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 5")
-    comparte=models.CharField(max_length=150)
+    enlacegd6=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 6")
+    enlacegd7=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 7")
+    enlacegd8=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 8")
+    enlacegd9=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 9")
+    enlacegd10=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 10")
+    comparte=models.CharField(max_length=150,null=True,blank=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
     def __str__(self):
             return self.nombre
 def slug_generator_gamesps2(sender,instance,*args,**kwargs):
@@ -154,13 +155,12 @@ class  gamesps3(models.Model):
     slug_gamesps3=models.SlugField(null=True,blank=True)
     descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
     genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:")
-    region=models.CharField(max_length=150,blank=True,null=True)
     Author=models.CharField(max_length=50)
     calificacion=models.CharField(max_length=100)
     descargas=models.IntegerField()
     idiomas=models.CharField(max_length=50,choices=idioma,null=True,blank=True,default=idioma[0])
     fecha_estreno=models.DateField(verbose_name="Fecha de Estreno")
-    fecha_subida=models.DateField(verbose_name="Fecha de Subida")
+    fecha_subida=models.DateField(verbose_name="Fecha de Subida",auto_now_add=True)
     trailer=models.CharField(max_length=100)
     disco=models.CharField(max_length=250,verbose_name="Peso Archivo")
     cfw=models.CharField(max_length=150,verbose_name="CFW")
@@ -174,12 +174,13 @@ class  gamesps3(models.Model):
     enlacegd3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 3")
     enlacegd4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 4")
     enlacegd5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 5")
-    enlacemg=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega ")
-    enlacemg2=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 2")
-    enlacemg3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 3")
-    enlacemg4=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 4")
-    enlacemg5=models.CharField(max_length=250,blank=True,verbose_name="Enlace Mega 5")
-    comparte=models.CharField(max_length=150)
+    enlacegd6=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 6")
+    enlacegd7=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 7")
+    enlacegd8=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 8")
+    enlacegd9=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 9")
+    enlacegd10=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 10")
+    comparte=models.CharField(max_length=150,null=True,blank=True)
+    enlace_publi=models.CharField(max_length=500,blank=True,null=True,verbose_name="Enlace publicidad")
     def __str__(self):
             return self.nombre
 def slug_generator_gamesps3(sender,instance,*args,**kwargs):
@@ -249,7 +250,7 @@ class series(models.Model):
     nombre_original=models.CharField(max_length=250,verbose_name="Nombre Original:")
     slug_serie=models.SlugField(max_length=250,null=True,blank=True)
     descripcion=models.CharField(max_length=1000,verbose_name="Descripcion:")
-    genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:",)
+    genero=models.ManyToManyField(categorias,verbose_name="Genero Juego:")
     region=models.CharField(max_length=150,blank=True,null=True)
     Author=models.CharField(max_length=150)
     calificacion=models.CharField(max_length=100)
@@ -283,7 +284,7 @@ def only_year_serie(sender,instance,*args,**kwargs):
     if instance.anio:
         return
     instance.anio=instance.fecha_estreno.year
-pre_save.connect(only_year,sender=series)
+pre_save.connect(only_year_serie,sender=series)
 
 class ntemporada(models.Model):
     nombre=models.CharField(max_length=100)
@@ -332,7 +333,7 @@ def only_year_temporada(sender,instance,*args,**kwargs):
     if instance.anio:
         return
     instance.anio=instance.fecha_estreno.year
-pre_save.connect(only_year,sender=temporadas)
+pre_save.connect(only_year_temporada,sender=temporadas)
 class ncapitulos(models.Model):
     nombre=models.CharField(max_length=100)
     slug_capitulos=models.SlugField(null=True,blank=True)
@@ -391,4 +392,4 @@ def only_year_capitulo(sender,instance,*args,**kwargs):
     if instance.anio:
         return
     instance.anio=instance.fecha_estreno.year
-pre_save.connect(only_year,sender=capitulos)
+pre_save.connect(only_year_capitulo,sender=capitulos)

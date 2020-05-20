@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import series,peliculas,categorias,temporadas,categorias,ntemporada,capitulos
+from .models import series,peliculas,categorias,temporadas,categorias,ntemporada,capitulos,gamespc,gamespsx,gamesps2,gamesps3
 from django.views.defaults import page_not_found
 from random import randint
 # Create your views here.
@@ -79,9 +79,7 @@ def pelicula(request,slug):
         'recomendacion7':recomendacion7,
         'recomendacion8':recomendacion8,
         'recomendacion9':recomendacion9,
-        'recomendacion10':recomendacion10,
-
-      
+        'recomendacion10':recomendacion10,   
     }
     return render(request,"pelicula.html",data)
 def serie(request,slug):
@@ -164,3 +162,213 @@ def pelicula_anio(request,slug):
         return render(request,"peliculas_anio.html",data)
     else:
         return redirect('principal')
+def principal_juegos(request):
+    juegospc=gamespc.objects.all()
+    juegospsx=gamespsx.objects.all()
+    juegosps2=gamesps2.objects.all()
+    juegosps3=gamesps3.objects.all()
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    data={
+        'juegospc':juegospc,
+        'juegospsx':juegospsx,
+        'juegosps2':juegosps2,
+        'juegosps3':juegosps3,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        
+    }
+    return render(request,"principal_juegos.html",data)
+def juegos_genero(request,slug):
+    juegospc=gamespc.objects.filter(genero__slug_categoria=slug)
+    juegospsx=gamespsx.objects.filter(genero__slug_categoria=slug)
+    juegosps2=gamesps2.objects.filter(genero__slug_categoria=slug)
+    juegosps3=gamesps3.objects.filter(genero__slug_categoria=slug)
+    pocos_requisitos=gamespc.objects.all()[8:16]
+    medios_requisitos=gamespc.objects.all()[16:24]
+    altos_requisitos=gamespc.objects.all()[24:31]
+    mas_visitados=gamespc.objects.all()[15:23]
+    mas_descargados=gamespc.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    genero=slug
+    if juegospc.exists():
+        data={
+        'juegospc':juegospc,
+        'juegospsx':juegospsx,
+        'juegosps2':juegosps2,
+        'juegosps3':juegosps3,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+       'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+        'genero':genero,
+        }
+        return render(request,"juegos_categorias.html",data)
+    else:
+        return redirect('principal')
+def juegos_anio(request,slug):
+    juegospc=gamespc.objects.filter(genero__slug_categoria=slug)
+    juegospsx=gamespsx.objects.filter(genero__slug_categoria=slug)
+    juegosps2=gamesps2.objects.filter(genero__slug_categoria=slug)
+    juegosps3=gamesps3.objects.filter(genero__slug_categoria=slug)
+    pocos_requisitos=gamespc.objects.all()[8:16]
+    medios_requisitos=gamespc.objects.all()[16:24]
+    altos_requisitos=gamespc.objects.all()[24:31]
+    mas_visitados=gamespc.objects.all()[15:23]
+    mas_descargados=gamespc.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    if juegospc.exists():
+        data={
+        'juegospc':juegospc,
+        'juegospsx':juegospsx,
+        'juegosps2':juegosps2,
+        'juegosps3':juegosps3,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+        }
+        return render(request,"juegos_anio.html",data)
+    else:
+        return redirect('principal')
+def juegospc(request):
+    juegospc=gamespc.objects.all()
+    pocos_requisitos=gamespc.objects.all()[8:16]
+    medios_requisitos=gamespc.objects.all()[16:24]
+    altos_requisitos=gamespc.objects.all()[24:31]
+    mas_visitados=gamespc.objects.all()[15:23]
+    mas_descargados=gamespc.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    data={
+        'juegospc':juegospc,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+    }
+    return render(request,"juegospc.html",data)
+def juegopc(request,slug):
+    juego=get_object_or_404(gamespc,slug_gamespc=slug)
+    count=gamespc.objects.count()
+    recomendacion1=gamespc.objects.all()[randint(0,count-1)]
+    data={
+        'juego':juego,
+        'recomendacion1':recomendacion1,
+        
+    }
+    return render(request,"juegopc.html",data)
+def juegospsx(request):
+    juegospsx=gamespsx.objects.all()
+    pocos_requisitos=gamespsx.objects.all()[8:16]
+    medios_requisitos=gamespsx.objects.all()[16:24]
+    altos_requisitos=gamespsx.objects.all()[24:31]
+    mas_visitados=gamespsx.objects.all()[15:23]
+    mas_descargados=gamespsx.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    data={
+        'juegospsx':juegospsx,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+    }
+    return render(request,"juegospsx.html",data)
+def juegopsx(request,slug):
+    juego=get_object_or_404(gamespsx,slug_gamespsx=slug)
+    count=gamespsx.objects.count()
+    recomendacion1=gamespsx.objects.all()[randint(0,count-1)]
+    data={
+        'juego':juego,
+        'recomendacion1':recomendacion1,
+        
+    }
+    return render(request,"juegopsx.html",data)
+def juegosps2(request):
+    juegosps2=gamesps2.objects.all()
+    pocos_requisitos=gamesps2.objects.all()[8:16]
+    medios_requisitos=gamesps2.objects.all()[16:24]
+    altos_requisitos=gamesps2.objects.all()[24:31]
+    mas_visitados=gamesps2.objects.all()[15:23]
+    mas_descargados=gamesps2.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    data={
+        'juegosps2':juegosps2,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+    }
+    return render(request,"juegosps2.html",data)
+def juegops2(request,slug):
+    juego=get_object_or_404(gamesps2,slug_gamesps2=slug)
+    count=gamesps2.objects.count()
+    recomendacion1=gamesps2.objects.all()[randint(0,count-1)]
+    data={
+        'juego':juego,
+        'recomendacion1':recomendacion1,
+        
+    }
+    return render(request,"juegops2.html",data)
+
+def juegosps3(request):
+    juegosps3=gamesps3.objects.all()
+    pocos_requisitos=gamesps3.objects.all()[8:16]
+    medios_requisitos=gamesps3.objects.all()[16:24]
+    altos_requisitos=gamesps3.objects.all()[24:31]
+    mas_visitados=gamesps3.objects.all()[15:23]
+    mas_descargados=gamesps3.objects.all()[:8]
+    last_film_add=peliculas.objects.get_queryset().order_by('-id')[:8]
+    last_serie_add=series.objects.get_queryset().order_by('-id')[:8]
+    data={
+        'juegosps3':juegosps3,
+        'pocos_requisitos':pocos_requisitos,
+        'medios_requisitos':medios_requisitos,
+        'altos_requisitos':altos_requisitos,
+        'mas_visitados':mas_visitados,
+        'mas_descargados':mas_descargados,
+        'last_film_add':last_film_add,
+        'last_serie_add':last_serie_add,
+        'categoria_genero':categoria_genero,
+        'anio_film':anio_film,
+    }
+    return render(request,"juegosps3.html",data)
+def juegops3(request,slug):
+    juego=get_object_or_404(gamesps3,slug_gamesps3=slug)
+    count=gamesps3.objects.count()
+    recomendacion1=gamesps3.objects.all()[randint(0,count-1)]
+    data={
+        'juego':juego,
+        'recomendacion1':recomendacion1,
+        
+    }
+    return render(request,"juegops3.html",data)

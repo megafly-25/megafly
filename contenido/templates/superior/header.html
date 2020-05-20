@@ -3,27 +3,26 @@
             <a href="{% url 'principal'%}"><img class="logo" src="{% static 'imagenes/logofinal.png' %}" alt="Megafly"></a>
             <nav class="menu">
                 <ul>
-                    <li><a href="">VideoJuegos &#43;</a>
+                    <li><a href="{%url 'principal_juegos'%}">VideoJuegos</a>
                         <ul class="submenu">
-                            <li><a href="">Juegos para Celular</a></li>
-                            <li><a href="">Juegos para PC</a></li>
-                            <li><a href="">Juegos para PSX</a></li>
-                            <li><a href="">Juegos para PS2</a></li>
-                            <li><a href="">Juegos para PS3</a></li>
+                            <li><a href="{%url 'juegospc'%}">Juegos para PC</a></li>
+                            <li><a href="{%url 'juegospsx'%}">Juegos para PSX</a></li>
+                            <li><a href="{%url 'juegosps2'%}">Juegos para PS2</a></li>
+                            <li><a href="{%url 'juegosps3'%}">Juegos para PS3</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Peliculas &#43;</a>
-                        <ul class="submenu">
+                    <li><a href="{%url 'principal'%}">Peliculas</a>
+                       <!-- <ul class="submenu">
                             <li><a href="">Peliculas Antiguas</a></li>
                             <li><a href="">Peliculas Actuales</a></li>
                             <li><a href="">Peliculas Clásicos</a></li>
                             <li><a href="">Peliculas de Accion</a></li>
                             <li><a href="">Peliculas de Aventura</a></li>
-                        </ul>
+                        </ul>-->
                     </li>
-                    <li><a href="">Series &#43;</a></li>
-                    <li><a href="">Mangas / Animes &#43; </a></li>
-                    <li><a href="">Famosos</a></li>
+                    <li><a href="{%url 'principal'%}">Series</a></li>
+                    <li><a href="{% url 'principal' %}">Mangas / Animes </a></li>
+                    <li><a href="{%url 'principal_cursos'%}">Cursos</a></li>
 
                 </ul>
             </nav>

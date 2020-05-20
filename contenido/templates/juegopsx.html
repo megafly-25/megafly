@@ -1,0 +1,166 @@
+{% extends "main.html" %}
+{% load static %}
+{%block schema%}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Descargar {{juego.nombre}} gratis para PSX por Google Drive",
+    "author": "Megafly",
+    "url": "https://www.megaflypeliculas.ga/juego/de/pc/{{juego.slug_gamespc}}",
+    "address": "Peru",
+    "sameAs": [
+      "https://www.facebook.com/groups/154149275933711/"
+    ]
+  }
+</script>
+{%endblock schema%}
+{% block facebook_pixel %}
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '552731338706557');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=552731338706557&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+{% endblock facebook_pixel %}
+{% block head %}
+{% block googleanalytics%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163130682-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163130682-1');
+</script>
+{% endblock googleanalytics%}
+<script data-ad-client="ca-pub-7691100873282163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<title>
+    Descargar {{juego.nombre}} Online Gratis para PSX en GoogleDrive | Megafly
+</title>
+<meta name="description" content="Descargar {{juego.nombre}} Online gratis para PSX a la mejora calidad por nuestros servidores Google Drive y Mega | megafly">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<meta name="keywords" content="Descargar juego {{juego.nombre}}, Descargar juego Online {{juego.nombre}}, ver juego {{juego.nombre}} a la mejora calidad, descarga pelicula {{pelicula.nombre}}, descargar pelicula {{pelicula.nombre}} por nuestros servidores Google Drive, Mega">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.megaflypeliculas.ga/juego/de/pc/{{juego.slug_gamespc}}">
+<link rel="shortcut icon" href="{% static 'imagenes/megafly-icon.png' %}">
+<meta name="referrer" content="origin">
+<meta name="google" content="translate">
+<meta name="google" content="sitelinkssearchbox">
+<link rel="dns-prefetch" href="https://www.megaflypeliculas.ga/juego/de/pc/{{juego.slug_gamespc}}">
+<meta property="fb:app_id" content="154149275933711">
+<meta property=”og:title” content="Descargar {{juego.nombre}} Online gratis para PSX en GoogleDrive | Megafly">
+<meta property=”og:type” content="website">
+<meta property="og:url" content="https://www.megaflypeliculas.ga/juego/de/pc/{{juego.slug_gamespc}}">
+<meta property="og:image" content="{{juego.img1.url}}">
+<meta property="og:site_name" content="Megafly Peliculas" >
+<meta property="og:locale" content="es-PE" >
+<meta property="og:description" content="Descargar {{juego.nombre}} Online gratis para PSX a la mejora calidad por nuestros servidores Google Drive y Mega | megafly">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:site" content="@megafly">
+<meta name="twitter:creator" content="@Megafly">
+<meta name="twitter:title" content="Descargar {{juego.nombre}} Online Gratis para PSX en GoogleDrive | Megafly">
+<meta name="twitter:url" content="https://www.megaflypeliculas.ga/juego/de/pc/{{juego.slug_gamespc}}">
+<meta name="twitter:description" content="Descargar {{juego.nombre}} Online gratis para PSX a la mejora calidad por nuestros servidores Google Drive y Mega | megafly">
+<meta name="twitter:image" content="{{pelicula.img1.url}}">
+<meta name="twitter:image:alt" content="Descargar {{juego.nombre}} Online gratis para PSX a la mejora calidad por nuestros servidores Google Drive y Mega | megafly">
+<link href="{% static 'css/main_estilos.css'%}" rel="stylesheet">
+<link href="{% static 'css/estilos_pelicula.css'%}" rel="stylesheet">
+<link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400"> {% endblock head %} {% block contenido %}
+<main class="contenido">
+    <div class="card">
+        <div class="card_header">
+            <a href="{% url 'principal'%}"><img src="{% static 'imagenes/izquierda-megafly.ico' %}"> </a>
+        </div>
+        <div class="card_body">
+            <div class="left_body">
+                <div class="left_body_responsive">
+                    <h1>{{juego.nombre}}</h1>
+                    <img src="{{juego.img1.url}}" alt="{{juego.nombre}}">
+                </div>
+                <div>
+                    <h5>Comparte:</h5>
+                    <div class="enlaces_body">
+                        <a href=""><img src="{% static 'imagenes/facebook-megafly.ico' %}" alt="Facebook megafly"></a>
+                        <a href=""><img src="{% static 'imagenes/twitter-megafly.ico' %}" alt="Twitter megafly"></a>
+                        <a href=""><img src="{% static 'imagenes/instagram-megafly.ico' %}" alt="Instagram megafly"></a>
+                        <a href=""><img src="{% static 'imagenes/whataspp-megafly.ico' %}" alt="Whatsapp megafly"></a>
+                        <a href=""><img src="{% static 'imagenes/copiar-enlace-megafly.ico' %}" alt="Enlace megafly"></a>
+                    </div>
+                </div>
+                <div class="recomendacion_body">
+                    <p>Juegos de PSX Recomendadas por Megafly</p>
+                    <div class="card_recomendadas">
+                        <a href="{%url 'juegopsx' slug=recomendacion1.slug_gamespsx%}"><img src="{{recomendacion1.img1.url}}" alt="{{recomendacion1.nombre}}"></a>
+                        <a href="{%url 'juegopsx' slug=recomendacion1.slug_gamespsx%}"><h2>{{recomendacion1.nombre}}</h2></a>
+                    </div>
+                     
+                </div>
+            </div>
+            <div class="right_body">
+                <div class="descripcion">
+                    <h1>{{juego.nombre}}</h1>
+                     <h2>Descargar {{juego.nombre}} Para PSX formato ISO</h2>
+                    <p>{{juego.descripcion}}</p>
+                    <div class="descripcion-col-main">
+                        <div class="descripcion-col-1">
+                            <p><strong>Fecha de Subida:</strong> {{juego.fecha_subida}}</p>
+                            <p><strong>Descargas:</strong> {{juego.descargas}}</p>
+                            <p><strong>Calificación:</strong> {{juego.calificacion}}</p>
+                
+                        </div>
+                        <div class="descripcion-col-2">
+                            <p><strong>Fecha de Estreno:</strong> {{juego.fecha_estreno}}</p>
+                            <p><strong>Peso de Juego:</strong> {{juego.disco}}</p>
+                            <p><strong>Idiomas:</strong> {{juego.idiomas}}</p>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Generos: </strong>{{juego.genero.all|join:', '|title}}</p>
+                </div>
+                <div class="descargar_body">
+                <a href="{{juego.enlace_publi}}" target="_blank">descargar por Google Drive</a>
+                </div>
+                <div class="trailer_body">
+                    <h1>Trailer {{juego.nombre}}</h1>
+                    <iframe src="https://www.youtube.com/embed/{{juego.trailer}}"  allowfullscreen></iframe>
+                </div>
+                <div class="capturas_body">
+                    <h1>Capturas {{juego.nombre}}</h1>
+                    <img src="{{juego.img2.url}}" alt="{{juego.nombre}}">
+                    <img src="{{juego.img3.url}}" alt="{{juego.nombre_original}}">
+                    <img src="{{juego.img4.url}}" alt="{{juego.nombre}}">
+                </div>
+                
+                <div class="tags_body">
+                <p><strong>Servidores: </strong>Google Drive, Mega</p>
+                <p><strong>Etiquetas: </strong>{{juego.nombre}}, Descargar Juegos Google Drive, Descargar Juegos para Pc, Descargar Juegos para PSX, Descargar Juegos para PS2, Descargar Juegos para PS3, Descargar Juegos por Mega, Descargar {{juego.nombre}}, Peliculas Google Drive, Peliculas Gratis, Peliculas Online, Peliculas Completas,Series, Series Online, Series Netflix, Series Gratis, Series Completas, Todos los capitulos Peliculas Google Drive, Peliculas Gratis, Peliculas Online, Peliculas Completas, Juegos Pc, Juegos PSX, Juegos PS2, Juegos PS3, Descargar juegos, Descargar Juegos Gratis, Descargar juegos por Mega, Descargar Juegos de Pocos Requisitos, Descargar Juegos de Medios Requisitos, Descargar Juegos de Altos Requisitos </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="recomendacion-responsive">
+<p>Juegos de PSX Recomendadas por Megafly</p>
+                    <div class="card_recomendadas">
+                        <a href="{%url 'juegopsx' slug=recomendacion1.slug_gamespsx%}"><img src="{{recomendacion1.img1.url}}" alt="{{recomendacion1.nombre}}"></a>
+                        <a href="{%url 'juegopsx' slug=recomendacion1.slug_gamespsx%}"><h2>{{recomendacion1.nombre}}</h2></a>
+                    </div>
+                     
+</div>
+{% endblock contenido %}

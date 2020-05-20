@@ -3,16 +3,12 @@
                            grid-gap: 1em;
                            grid-template-columns: repeat(5, 1fr);
                            grid-template-rows: repeat(10, auto);
-                           grid-template-areas: "header header header header header" "swiper-container2 swiper-container2 swiper-container2 swiper-container2 swiper-container2" "contenido contenido contenido contenido contenido" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
+                           grid-template-areas: "header header header header header" "contenido contenido contenido contenido contenido" "descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina descripcion-pagina" "sidebar-1 sidebar-1 sidebar-1 sidebar-1 sidebar-1" "sidebar-2 sidebar-2 sidebar-2 sidebar-2 sidebar-2" "widget-1 widget-1 widget-1 widget-1 widget-1" "widget-2 widget-2 widget-2 widget-2 widget-2" "informacion-megafly informacion-megafly informacion-megafly informacion-megafly informacion-megafly" "footer footer footer footer footer";
                        }
                        /*estilos Contenido*/
                        
                        .contenedor .header {
                            grid-area: header;
-                       }
-                       
-                       .contenedor .swiper-container2 {
-                           grid-area: swiper-container2;
                        }
                        
                        .contenedor .contenido {
@@ -267,73 +263,6 @@
                            text-align: center;
                            color: #fff;
                        }
-                       /*estilos resumen*/
-                       
-                       .contenedor .s2 {
-                           width: 525%;
-                           margin: 0;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide {
-                           position: relative;
-                           font-size: 16px;
-                           height: 35em;
-                           background-size: cover;
-                           -moz-background-size: cover;
-                           -webkit-background-size: cover;
-                           -o-background-size: cover;
-                           display: flex;
-                           align-items: center;
-                           justify-content: start;
-                           color: #fff;
-                           padding-top: 6em;
-                           padding-bottom: 2em;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen {
-                           justify-content: start;
-                           margin: 0 6em;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen h1 {
-                           font-size: 2.5em;
-                           margin-bottom: 0.5em;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen p {
-                           font-size: 1em;
-                           line-height: 1.75em;
-                           max-width: 50%;
-                           margin-bottom: 1em;
-                           color: #ccc;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen>a {
-                           background: rgba(0, 0, 0, 0.5);
-                           border-radius: 0.3em;
-                           padding: 1em 1.87em;
-                           color: #fff;
-                           margin-right: 2em;
-                           cursor: pointer;
-                           transition: .5s ease all;
-                           font-size: 1em;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen>a:hover {
-                           opacity: 0.5;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen .boton1 img {
-                           width: 30px;
-                           margin: 0 5px;
-                       }
-                       
-                       .contenedor .s2 .swiper-wrapper .swiper-slide .resumen .boton2 img {
-                           position: relative;
-                           width: 15px;
-                           margin: 0 5px;
-                           top: 2px;
-                       }
                        /*estilos contenido*/
                        
                        .contenedor .contenido {
@@ -353,6 +282,22 @@
                            display: flex;
                            flex-direction: row;
                            flex-wrap: wrap;
+                       }
+                       
+                       .contenedor .contenido .boton_add {
+                           margin-bottom: 1em;
+                       }
+                       
+                       .contenedor .contenido .boton_add a {
+                           background: #fff;
+                           padding: 8px 15px;
+                           color: #191919;
+                           transition: all ease 0.3s;
+                           border-radius: 5px;
+                       }
+                       
+                       .contenedor .contenido .boton_add a:hover {
+                           opacity: 0.6;
                        }
                        
                        .contenido .contenido_resumen .card {
@@ -549,15 +494,6 @@
                            }
                            .contenido .contenido_resumen .card h2 {
                                font-size: 12px;
-                           }
-                           .contenido .s2 {
-                               display: none;
-                           }
-                           .contenedor .s2 .swiper-wrapper .swiper-slide {
-                               display: none;
-                           }
-                           .contenido .s1 {
-                               display: none;
                            }
                            .header .menu ul {
                                flex-direction: column;
