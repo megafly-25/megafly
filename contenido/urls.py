@@ -8,7 +8,7 @@ sitemaps = {
 }
 urlpatterns = [
     path('',principal,name="principal"),
-    path('pelicula/<slug>',pelicula,name="pelicula"),
+    path('peliculas/<slug>',pelicula,name="pelicula"),
     path('serie/<slug>',serie,name="serie"),
     path('<nombre>/<temporada_slug>/<slug>/',temporada_serie,name="temporada_serie"),
     path('<nombre>/capitulo-<capitulo>/<slug>',verserie,name="verserie"),
